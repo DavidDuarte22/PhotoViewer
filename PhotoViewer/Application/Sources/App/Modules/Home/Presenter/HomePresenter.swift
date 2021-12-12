@@ -18,23 +18,27 @@ protocol HomePresenterInterface {
 
 class HomePresenterImpl: HomePresenterInterface {
   
-  func getPhotoUrl(for row: Int) -> URL? {
-    if let photo = photos.value?[row] {
-      return URL(string: photo.smallImage)
-    }
-    return nil
-  }
-  
-  
-  var homeRouter: HomeRouterInterface?
-  var homeInteractor: HomeInteractorInterface?
+  var homeRouter: HomeRouterInterface
+  var homeInteractor: HomeInteractorInterface
 
   private var page = 1
   
   var photos = Observable<[Photo]?>(nil)
   
+  init(homeInteractor: HomeInteractorInterface, homeRouter: HomeRouterInterface) {
+    self.homeInteractor = homeInteractor
+    self.homeRouter = homeRouter
+  }
+  
+  func getPhotoUrl(for row: Int) -> URL? {
+    if let photo = photos.value?[safe: row] {
+      return URL(string: photo.smallImage)
+    }
+    return nil
+  }
+  
   func fetchPhotos() {
-    homeInteractor?.fetchPhotos(page: page) { [weak self] result in
+    homeInteractor.fetchPhotos(page: page) { [weak self] result in
       switch result {
       case .success(let photos):
         self?.page += 1
@@ -51,8 +55,8 @@ class HomePresenterImpl: HomePresenterInterface {
   }
   
   func didSelectPhoto(indexPath: IndexPath) {
-    guard let photo = self.photos.value?[indexPath.row] else { return }
-    homeRouter?.navigateToPhotoDetail(photo: photo)
+    guard let photo = self.photos.value?[safe: indexPath.row] else { return }
+    homeRouter.navigateToPhotoDetail(photo: photo)
   }
   
   internal func getProportionallyHeight(collectionView: UICollectionView, width: Int, height: Int) -> CGFloat {

@@ -10,6 +10,7 @@ import UIKit
 
 protocol HomeRouterInterface {
   func navigateToPhotoDetail(photo: Photo)
+  var viewController: UIViewController? { get set }
 }
 
 class HomeRouterImpl: HomeRouterInterface {

@@ -83,7 +83,7 @@ extension FavoritesPresenterImpl {
   }
   
   func getPhotoUrl(for row: Int) -> URL? {
-    if let photo = favoritesPhotos.value?[row] {
+    if let photo = favoritesPhotos.value?[safe: row] {
       return URL(string: photo.smallImage)
     }
     return nil
@@ -92,7 +92,7 @@ extension FavoritesPresenterImpl {
   
   // TODO: Duplicated code
   func likedPhoto(at indexPath: IndexPath) {
-    guard let photoID = self.favoritesPhotos.value?[indexPath.row].id else { return }
+    guard let photoID = self.favoritesPhotos.value?[safe: indexPath.row]?.id else { return }
     self.favoritesInteractor?.setLikeToPhoto(photoId: photoID) { [weak self] result in
       switch result {
       case .success(let isLiked):

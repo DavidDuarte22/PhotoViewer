@@ -20,13 +20,13 @@ final class MyFakeService: ApiServiceInterface {
   static var resultPhoto: Result<PhotoDTO, HTTP.Error>?
   
   let photoRequestDTO = PhotosRequestDTO(
-    totalResults: 100,
+    totalResults: 8000,
     page: 1,
-    perPage: 5,
+    perPage: 15,
     photos: [
-      PhotoDTO(id: 1, width: 100, height: 100, url: "fakeUrl", photographer: "Fake Photographer", photographerURL: "fakeUrl", photographerID: 1, avgColor: "fakeColor", src: .init(original: "fakeOriginalUrl", large2X: "fakeLarge2Url", large: "fakeLargeUrl", medium: "fakeMediumUrl", small: "fakeSmallUrl", portrait: "fakePortraitUrl", landscape: "fakeLandscape", tiny: "fakeTiny"), liked: false)
+      PhotoDTO(id: 3408744, width: 3546, height: 2255, url: "https://www.pexels.com/photo/scenic-view-of-snow-capped-mountains-during-night-3408744/", photographer: "stein egil liland", photographerURL: "https://www.pexels.com/@therato", photographerID: 144244, avgColor: "#557088", src: .init(original: "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg", large2X: "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", large: "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&h=650&w=940", medium: "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&h=350", small: "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&h=130", portrait: "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800", landscape: "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200", tiny: "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&dpr=1&fit=crop&h=200&w=280"), liked: false)
     ],
-    nextPage: "fake link")
+    nextPage: "https://api.pexels.com/v1/search/?page=2&per_page=15&query=nature")
   
   func photos(page: Int, completionHandler: @escaping (Result<PhotosRequestDTO, HTTP.Error>) -> Void) {
     

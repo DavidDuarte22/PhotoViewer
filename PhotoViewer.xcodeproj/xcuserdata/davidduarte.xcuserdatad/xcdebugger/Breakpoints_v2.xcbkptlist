@@ -20,5 +20,228 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "51EAB710-54A7-4621-8D32-5CF239208015"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhotoViewerTests/Modules/Home/HomePresenterTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "MockHomeRouter"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "51EAB710-54A7-4621-8D32-5CF239208015 - 4870444ad73137e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoViewerTests.HomePresenterTests.MockHomeRouter.navigateToPhotoDetail(photo: PhotoViewerTests.Photo) -&gt; ()"
+                  moduleName = "PhotoViewerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidduarte/Documents/PhotoViewer/PhotoViewerTests/Modules/Home/HomePresenterTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "51EAB710-54A7-4621-8D32-5CF239208015 - 4870444ad73137a1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoViewerTests.HomePresenterTests.MockHomeRouter.navigateToPhotoDetail(photo: PhotoViewerTests.Photo) -&gt; ()"
+                  moduleName = "PhotoViewerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidduarte/Documents/PhotoViewer/PhotoViewerTests/Modules/Home/HomePresenterTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CBE3D71A-2D4A-414C-B09F-BD274DD8D864"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhotoViewer/Application/Sources/App/Modules/Home/Presenter/HomePresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "didSelectPhoto(indexPath:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CBE3D71A-2D4A-414C-B09F-BD274DD8D864 - 6bc18543f6803597"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoViewer.HomePresenterImpl.didSelectPhoto(indexPath: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "PhotoViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidduarte/Documents/PhotoViewer/PhotoViewer/Application/Sources/App/Modules/Home/Presenter/HomePresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "1108">
+               </Location>
+               <Location
+                  uuid = "CBE3D71A-2D4A-414C-B09F-BD274DD8D864 - d3badb151df3a9e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoViewerTests.HomePresenterImpl.didSelectPhoto(indexPath: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "PhotoViewerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidduarte/Documents/PhotoViewer/PhotoViewer/Application/Sources/App/Modules/Home/Presenter/HomePresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "1108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F396163-E220-4DCA-8467-3B75261F9490"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhotoViewerTests/Modules/Home/HomePresenterTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "HomePresenterTests"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "1F396163-E220-4DCA-8467-3B75261F9490 - bb66a679249eae0b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoViewerTests.HomePresenterTests.testDidSelectPhoto_OK() -&gt; ()"
+                  moduleName = "PhotoViewerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidduarte/Documents/PhotoViewer/PhotoViewerTests/Modules/Home/HomePresenterTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "722">
+               </Location>
+               <Location
+                  uuid = "1F396163-E220-4DCA-8467-3B75261F9490 - bb66a679249eae0b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoViewerTests.HomePresenterTests.testDidSelectPhoto_OK() -&gt; ()"
+                  moduleName = "PhotoViewerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidduarte/Documents/PhotoViewer/PhotoViewerTests/Modules/Home/HomePresenterTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "683">
+               </Location>
+               <Location
+                  uuid = "1F396163-E220-4DCA-8467-3B75261F9490 - bb66a679249eae45"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoViewerTests.HomePresenterTests.testDidSelectPhoto_OK() -&gt; ()"
+                  moduleName = "PhotoViewerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidduarte/Documents/PhotoViewer/PhotoViewerTests/Modules/Home/HomePresenterTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "683">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE167A45-BE7A-4625-A721-6D35E750F6C9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhotoViewer/Application/Sources/App/Modules/Home/Presenter/HomePresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "didSelectPhoto(indexPath:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DE167A45-BE7A-4625-A721-6D35E750F6C9 - 6bc18543f68035b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoViewer.HomePresenterImpl.didSelectPhoto(indexPath: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "PhotoViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidduarte/Documents/PhotoViewer/PhotoViewer/Application/Sources/App/Modules/Home/Presenter/HomePresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "117">
+               </Location>
+               <Location
+                  uuid = "DE167A45-BE7A-4625-A721-6D35E750F6C9 - d3badb151df3a9c6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoViewerTests.HomePresenterImpl.didSelectPhoto(indexPath: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "PhotoViewerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidduarte/Documents/PhotoViewer/PhotoViewer/Application/Sources/App/Modules/Home/Presenter/HomePresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "117">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E0CF846E-7D81-4C38-8891-24611D268ED4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PhotoViewerTests/Modules/Home/HomeRouterTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "testNavigateToPhotoDetail_OK()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

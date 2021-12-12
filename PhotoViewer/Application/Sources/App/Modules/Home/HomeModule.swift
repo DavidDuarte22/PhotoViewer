@@ -11,9 +11,9 @@ import UIKit
 class HomeModule {
   static func build() -> UIViewController {
     
-    let presenter = HomePresenterImpl()
     let router = HomeRouterImpl()
     let interactor = HomeInteractorImpl()
+    let presenter = HomePresenterImpl(homeInteractor: interactor, homeRouter: router)
     let view = HomeViewImpl(presenter: presenter)
     
     presenter.homeRouter = router

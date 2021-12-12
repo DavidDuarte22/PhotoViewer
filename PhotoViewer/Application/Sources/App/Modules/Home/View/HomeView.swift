@@ -121,7 +121,7 @@ extension HomeViewImpl: UICollectionViewDelegate, UICollectionViewDataSource {
 extension HomeViewImpl: MosaicViewLayoutDelegate {
   
   func collectionView(_ collectionView: UICollectionView, heightForItemAtIndexPath indexPath: IndexPath) -> CGFloat {
-    if let photo = self.presenter.photos.value?[indexPath.row] {
+    if let photo = self.presenter.photos.value?[safe: indexPath.row] {
       return presenter.getProportionallyHeight(collectionView: collectionView, width: photo.width, height: photo.height)
     }
     return 0

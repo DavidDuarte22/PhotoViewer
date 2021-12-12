@@ -5,4 +5,21 @@
 //  Created by David Duarte on 11/12/2021.
 //
 
-import Foundation
+import XCTest
+@testable import PhotoViewer
+
+class HomeModuleTests: XCTestCase {
+    
+  override func setUp() {
+    super.setUp()
+  }
+  
+  override func tearDown() {
+    super.tearDown()
+  }
+  
+  func testHomeModuleInit_OK() {
+    let moduleInstance = HomeModule.build()
+    XCTAssertNotNil(moduleInstance)
+  }
+}

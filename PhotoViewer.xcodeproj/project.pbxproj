@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033FB4862766B0AE0059DC2F /* HomeRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FB4852766B0AE0059DC2F /* HomeRouterTests.swift */; };
 		037584472762CCC800904703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584462762CCC800904703 /* AppDelegate.swift */; };
 		037584492762CCC800904703 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584482762CCC800904703 /* SceneDelegate.swift */; };
 		037584502762CCCA00904703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375844F2762CCCA00904703 /* Assets.xcassets */; };
@@ -65,6 +66,39 @@
 		03C33C3B2764BCE100E21ADE /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C33C3A2764BCE100E21ADE /* PhotoTests.swift */; };
 		03C33C3D2764BE7800E21ADE /* HomeModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C33C3C2764BE7800E21ADE /* HomeModuleTests.swift */; };
 		03C33C3F2764BE9000E21ADE /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C33C3E2764BE9000E21ADE /* HomePresenterTests.swift */; };
+		03C33C402765439200E21ADE /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584892762CE5900904703 /* HomeRouter.swift */; };
+		03C33C41276543A600E21ADE /* PhotoDetailModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375849B2762CFA300904703 /* PhotoDetailModule.swift */; };
+		03C33C42276543DD00E21ADE /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584DC2762D5E800904703 /* Observable.swift */; };
+		03C33C43276543E200E21ADE /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584D92762D5D900904703 /* LocalDataManager.swift */; };
+		03C33C44276543E600E21ADE /* UIImageLoaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584D82762D5D900904703 /* UIImageLoaderHelper.swift */; };
+		03C33C45276543E800E21ADE /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584C42762D1AF00904703 /* UITableView+Extension.swift */; };
+		03C33C46276543EA00E21ADE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584C32762D1AF00904703 /* UIView+Extension.swift */; };
+		03C33C47276543EC00E21ADE /* UiimageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584C12762D1A500904703 /* UiimageView+Extension.swift */; };
+		03C33C48276543F600E21ADE /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584D42762D55800904703 /* ImageLoader.swift */; };
+		03C33C49276543F900E21ADE /* AppInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375851D2763D32200904703 /* AppInitializer.swift */; };
+		03C33C4A276543FD00E21ADE /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375848E2762CEB200904703 /* TabBarRouter.swift */; };
+		03C33C4B276543FE00E21ADE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375848C2762CEA400904703 /* TabBarController.swift */; };
+		03C33C4C2765440000E21ADE /* TabBarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584922762CF1F00904703 /* TabBarModule.swift */; };
+		03C33C4D2765440300E21ADE /* FavoritesModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584AF2762D07100904703 /* FavoritesModule.swift */; };
+		03C33C4E2765440600E21ADE /* FavoritePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584B32762D08400904703 /* FavoritePhotoCell.swift */; };
+		03C33C4F2765440800E21ADE /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584AD2762D06500904703 /* FavoritesView.swift */; };
+		03C33C502765440B00E21ADE /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584B12762D07B00904703 /* FavoritesInteractor.swift */; };
+		03C33C512765440E00E21ADE /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584B52762D08B00904703 /* FavoritesPresenter.swift */; };
+		03C33C522765441100E21ADE /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584AB2762D05C00904703 /* FavoritesRouter.swift */; };
+		03C33C532765441400E21ADE /* HomeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584852762CE4600904703 /* HomeModule.swift */; };
+		03C33C542765441800E21ADE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375847E2762CE0E00904703 /* HomeView.swift */; };
+		03C33C552765441A00E21ADE /* MosaicViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375847D2762CE0E00904703 /* MosaicViewLayout.swift */; };
+		03C33C562765441D00E21ADE /* RoundedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375847F2762CE0E00904703 /* RoundedPhotoCell.swift */; };
+		03C33C572765442200E21ADE /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584872762CE5000904703 /* HomePresenter.swift */; };
+		03C33C582765442E00E21ADE /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584A32762CFDB00904703 /* ImageView.swift */; };
+		03C33C592765443200E21ADE /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584A42762CFDB00904703 /* PhotoDetailView.swift */; };
+		03C33C5A2765443600E21ADE /* PhotoDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375849D2762CFB600904703 /* PhotoDetailInteractor.swift */; };
+		03C33C5B2765443A00E21ADE /* PhotoDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375849F2762CFC300904703 /* PhotoDetailPresenter.swift */; };
+		03C33C5C2765443E00E21ADE /* PhotoDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584A12762CFCC00904703 /* PhotoDetailRouter.swift */; };
+		03C33C5D2765444100E21ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584462762CCC800904703 /* AppDelegate.swift */; };
+		03C33C5E2765444300E21ADE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584482762CCC800904703 /* SceneDelegate.swift */; };
+		03C33C6027654FFF00E21ADE /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C33C5F27654FFF00E21ADE /* Collection+Extension.swift */; };
+		03C33C6127654FFF00E21ADE /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C33C5F27654FFF00E21ADE /* Collection+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +119,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		033FB4852766B0AE0059DC2F /* HomeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterTests.swift; sourceTree = "<group>"; };
 		037584432762CCC800904703 /* PhotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037584462762CCC800904703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		037584482762CCC800904703 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +175,7 @@
 		03C33C3A2764BCE100E21ADE /* PhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTests.swift; sourceTree = "<group>"; };
 		03C33C3C2764BE7800E21ADE /* HomeModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModuleTests.swift; sourceTree = "<group>"; };
 		03C33C3E2764BE9000E21ADE /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		03C33C5F27654FFF00E21ADE /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +458,7 @@
 				037584C42762D1AF00904703 /* UITableView+Extension.swift */,
 				037584C32762D1AF00904703 /* UIView+Extension.swift */,
 				037584C12762D1A500904703 /* UiimageView+Extension.swift */,
+				03C33C5F27654FFF00E21ADE /* Collection+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -467,6 +504,7 @@
 				03C33C3A2764BCE100E21ADE /* PhotoTests.swift */,
 				03C33C3C2764BE7800E21ADE /* HomeModuleTests.swift */,
 				03C33C3E2764BE9000E21ADE /* HomePresenterTests.swift */,
+				033FB4852766B0AE0059DC2F /* HomeRouterTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -711,6 +749,7 @@
 				037584CD2762D4BA00904703 /* App.swift in Sources */,
 				037584472762CCC800904703 /* AppDelegate.swift in Sources */,
 				0375849C2762CFA300904703 /* PhotoDetailModule.swift in Sources */,
+				03C33C6027654FFF00E21ADE /* Collection+Extension.swift in Sources */,
 				037584BE2762D17A00904703 /* ServiceBuilterInterface.swift in Sources */,
 				037584AC2762D05C00904703 /* FavoritesRouter.swift in Sources */,
 				037584A52762CFDB00904703 /* ImageView.swift in Sources */,
@@ -748,20 +787,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C33C582765442E00E21ADE /* ImageView.swift in Sources */,
+				03C33C46276543EA00E21ADE /* UIView+Extension.swift in Sources */,
+				03C33C4D2765440300E21ADE /* FavoritesModule.swift in Sources */,
+				03C33C5D2765444100E21ADE /* AppDelegate.swift in Sources */,
+				03C33C532765441400E21ADE /* HomeModule.swift in Sources */,
+				03C33C502765440B00E21ADE /* FavoritesInteractor.swift in Sources */,
+				03C33C41276543A600E21ADE /* PhotoDetailModule.swift in Sources */,
+				03C33C552765441A00E21ADE /* MosaicViewLayout.swift in Sources */,
+				03C33C49276543F900E21ADE /* AppInitializer.swift in Sources */,
+				03C33C592765443200E21ADE /* PhotoDetailView.swift in Sources */,
+				03C33C4B276543FE00E21ADE /* TabBarController.swift in Sources */,
 				03C33C3D2764BE7800E21ADE /* HomeModuleTests.swift in Sources */,
+				03C33C572765442200E21ADE /* HomePresenter.swift in Sources */,
+				033FB4862766B0AE0059DC2F /* HomeRouterTests.swift in Sources */,
+				03C33C5C2765443E00E21ADE /* PhotoDetailRouter.swift in Sources */,
+				03C33C45276543E800E21ADE /* UITableView+Extension.swift in Sources */,
+				03C33C542765441800E21ADE /* HomeView.swift in Sources */,
 				037585612764133D00904703 /* PhotosRequestDTO.swift in Sources */,
+				03C33C4C2765440000E21ADE /* TabBarModule.swift in Sources */,
 				03C33C352764B23800E21ADE /* ServiceBuilterInterface.swift in Sources */,
+				03C33C6127654FFF00E21ADE /* Collection+Extension.swift in Sources */,
+				03C33C562765441D00E21ADE /* RoundedPhotoCell.swift in Sources */,
+				03C33C44276543E600E21ADE /* UIImageLoaderHelper.swift in Sources */,
+				03C33C42276543DD00E21ADE /* Observable.swift in Sources */,
 				037585602764132D00904703 /* ServiceInterface.swift in Sources */,
+				03C33C522765441100E21ADE /* FavoritesRouter.swift in Sources */,
+				03C33C512765440E00E21ADE /* FavoritesPresenter.swift in Sources */,
 				03C33C372764B8AA00E21ADE /* HomeInteractor.swift in Sources */,
+				03C33C43276543E200E21ADE /* LocalDataManager.swift in Sources */,
+				03C33C402765439200E21ADE /* HomeRouter.swift in Sources */,
+				03C33C47276543EC00E21ADE /* UiimageView+Extension.swift in Sources */,
+				03C33C5E2765444300E21ADE /* SceneDelegate.swift in Sources */,
 				037585622764134B00904703 /* PhotoDTO.swift in Sources */,
+				03C33C48276543F600E21ADE /* ImageLoader.swift in Sources */,
 				03758552276409F000904703 /* HomeInteractorTests.swift in Sources */,
+				03C33C5A2765443600E21ADE /* PhotoDetailInteractor.swift in Sources */,
+				03C33C4F2765440800E21ADE /* FavoritesView.swift in Sources */,
 				03C33C3B2764BCE100E21ADE /* PhotoTests.swift in Sources */,
+				03C33C4A276543FD00E21ADE /* TabBarRouter.swift in Sources */,
 				03C33C3F2764BE9000E21ADE /* HomePresenterTests.swift in Sources */,
+				03C33C5B2765443A00E21ADE /* PhotoDetailPresenter.swift in Sources */,
 				0375855F276411E900904703 /* FakeApiService.swift in Sources */,
 				03C33C382764B8B400E21ADE /* Photo.swift in Sources */,
 				037585222763EECF00904703 /* FavoritesPresenterTests.swift in Sources */,
 				03C33C392764B8BD00E21ADE /* App.swift in Sources */,
 				0375845E2762CCCA00904703 /* PhotoViewerTests.swift in Sources */,
+				03C33C4E2765440600E21ADE /* FavoritePhotoCell.swift in Sources */,
 				03C33C342764B22000E21ADE /* ServiceBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
