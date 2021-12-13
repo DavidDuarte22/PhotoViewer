@@ -11,13 +11,11 @@ import UIKit
 class PhotoDetailModule {
   static func build(photo: Photo) -> UIViewController {
     
-    let presenter = PhotoDetailPresenterImpl(photo: photo)
     let router = PhotoDetailRouterImpl()
     let interactor = PhotoDetailInteractorImpl()
+    let presenter = PhotoDetailPresenterImpl(photoDetailInteractor: interactor, photoDetailRouter: router, photo: photo)
     let view = PhotoDetailViewImpl(presenter: presenter)
     
-    presenter.photoDetailRouter = router
-    presenter.photoDetailInteractor = interactor
     router.viewController = view
     
     return view

@@ -23,7 +23,10 @@ class FavoritesPresenterImpl: FavoritesPresenterInterface {
   var favoritesPhotos = Observable<[Photo]?>(nil)
   var photosIDs = [Int]()
   
-  
+  init(favoritesInteractor: FavoritesInteractorInterface, favoritesRouter: FavoritesRouterInterface) {
+    self.favoritesInteractor = favoritesInteractor
+    self.favoritesRouter = favoritesRouter
+  }
   
   internal func getFavoritesPhotos() {
     

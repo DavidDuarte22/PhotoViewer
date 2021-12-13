@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		033FB4862766B0AE0059DC2F /* HomeRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033FB4852766B0AE0059DC2F /* HomeRouterTests.swift */; };
 		037584472762CCC800904703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584462762CCC800904703 /* AppDelegate.swift */; };
 		037584492762CCC800904703 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584482762CCC800904703 /* SceneDelegate.swift */; };
 		037584502762CCCA00904703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375844F2762CCCA00904703 /* Assets.xcassets */; };
@@ -51,7 +50,6 @@
 		037584DB2762D5D900904703 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584D92762D5D900904703 /* LocalDataManager.swift */; };
 		037584DD2762D5E800904703 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584DC2762D5E800904703 /* Observable.swift */; };
 		037584E02762D64E00904703 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584DF2762D64E00904703 /* Photo.swift */; };
-		0375851E2763D32300904703 /* AppInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375851D2763D32200904703 /* AppInitializer.swift */; };
 		037585222763EECF00904703 /* FavoritesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037585212763EECF00904703 /* FavoritesPresenterTests.swift */; };
 		03758552276409F000904703 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03758551276409F000904703 /* HomeInteractorTests.swift */; };
 		0375855F276411E900904703 /* FakeApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375855E276411E900904703 /* FakeApiService.swift */; };
@@ -75,7 +73,6 @@
 		03C33C46276543EA00E21ADE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584C32762D1AF00904703 /* UIView+Extension.swift */; };
 		03C33C47276543EC00E21ADE /* UiimageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584C12762D1A500904703 /* UiimageView+Extension.swift */; };
 		03C33C48276543F600E21ADE /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584D42762D55800904703 /* ImageLoader.swift */; };
-		03C33C49276543F900E21ADE /* AppInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375851D2763D32200904703 /* AppInitializer.swift */; };
 		03C33C4A276543FD00E21ADE /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375848E2762CEB200904703 /* TabBarRouter.swift */; };
 		03C33C4B276543FE00E21ADE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0375848C2762CEA400904703 /* TabBarController.swift */; };
 		03C33C4C2765440000E21ADE /* TabBarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584922762CF1F00904703 /* TabBarModule.swift */; };
@@ -119,7 +116,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		033FB4852766B0AE0059DC2F /* HomeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterTests.swift; sourceTree = "<group>"; };
 		037584432762CCC800904703 /* PhotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037584462762CCC800904703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		037584482762CCC800904703 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,7 +163,6 @@
 		037584D92762D5D900904703 /* LocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
 		037584DC2762D5E800904703 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		037584DF2762D64E00904703 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		0375851D2763D32200904703 /* AppInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInitializer.swift; sourceTree = "<group>"; };
 		037585212763EECF00904703 /* FavoritesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenterTests.swift; sourceTree = "<group>"; };
 		03758551276409F000904703 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
 		0375855E276411E900904703 /* FakeApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeApiService.swift; sourceTree = "<group>"; };
@@ -504,7 +499,6 @@
 				03C33C3A2764BCE100E21ADE /* PhotoTests.swift */,
 				03C33C3C2764BE7800E21ADE /* HomeModuleTests.swift */,
 				03C33C3E2764BE9000E21ADE /* HomePresenterTests.swift */,
-				033FB4852766B0AE0059DC2F /* HomeRouterTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -551,7 +545,6 @@
 			isa = PBXGroup;
 			children = (
 				037584CC2762D4BA00904703 /* App.swift */,
-				0375851D2763D32200904703 /* AppInitializer.swift */,
 				037584762762CD6400904703 /* Modules */,
 			);
 			path = App;
@@ -775,7 +768,6 @@
 				037584DD2762D5E800904703 /* Observable.swift in Sources */,
 				0375848F2762CEB200904703 /* TabBarRouter.swift in Sources */,
 				0375848A2762CE5900904703 /* HomeRouter.swift in Sources */,
-				0375851E2763D32300904703 /* AppInitializer.swift in Sources */,
 				0375848D2762CEA400904703 /* TabBarController.swift in Sources */,
 				037584882762CE5000904703 /* HomePresenter.swift in Sources */,
 				037584BC2762D17000904703 /* ServiceBuilder.swift in Sources */,
@@ -795,12 +787,10 @@
 				03C33C502765440B00E21ADE /* FavoritesInteractor.swift in Sources */,
 				03C33C41276543A600E21ADE /* PhotoDetailModule.swift in Sources */,
 				03C33C552765441A00E21ADE /* MosaicViewLayout.swift in Sources */,
-				03C33C49276543F900E21ADE /* AppInitializer.swift in Sources */,
 				03C33C592765443200E21ADE /* PhotoDetailView.swift in Sources */,
 				03C33C4B276543FE00E21ADE /* TabBarController.swift in Sources */,
 				03C33C3D2764BE7800E21ADE /* HomeModuleTests.swift in Sources */,
 				03C33C572765442200E21ADE /* HomePresenter.swift in Sources */,
-				033FB4862766B0AE0059DC2F /* HomeRouterTests.swift in Sources */,
 				03C33C5C2765443E00E21ADE /* PhotoDetailRouter.swift in Sources */,
 				03C33C45276543E800E21ADE /* UITableView+Extension.swift in Sources */,
 				03C33C542765441800E21ADE /* HomeView.swift in Sources */,

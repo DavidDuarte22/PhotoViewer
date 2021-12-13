@@ -23,7 +23,11 @@ class PhotoDetailPresenterImpl: PhotoDetailPresenterInterface {
   
   var photoItem: Observable<Photo>
   
-  required init(photo: Photo){
+  required init(photoDetailInteractor: PhotoDetailInteractorInterface,
+                photoDetailRouter: PhotoDetailRouterInterface,
+                photo: Photo){
+    self.photoDetailInteractor = photoDetailInteractor
+    self.photoDetailRouter = photoDetailRouter
     photoItem = Observable<Photo>.init(photo)
   }
   

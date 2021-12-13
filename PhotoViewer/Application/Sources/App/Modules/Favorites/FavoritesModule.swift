@@ -11,13 +11,11 @@ import UIKit
 class FavoritesModule {
   static func build() -> UIViewController {
     
-    let presenter = FavoritesPresenterImpl()
     let router = FavoritesRouterImpl()
     let interactor = FavoritesInteractorImpl()
+    let presenter = FavoritesPresenterImpl(favoritesInteractor: interactor, favoritesRouter: router)
     let view = FavoritesViewImpl(presenter: presenter)
     
-    presenter.favoritesRouter = router
-    presenter.favoritesInteractor = interactor
     router.viewController = view
     
     presenter.setInteractorIDsObserver()
@@ -25,4 +23,3 @@ class FavoritesModule {
     return view
   }
 }
-

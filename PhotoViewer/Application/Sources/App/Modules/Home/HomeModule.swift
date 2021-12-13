@@ -16,8 +16,6 @@ class HomeModule {
     let presenter = HomePresenterImpl(homeInteractor: interactor, homeRouter: router)
     let view = HomeViewImpl(presenter: presenter)
     
-    presenter.homeRouter = router
-    presenter.homeInteractor = interactor
     router.viewController = view
     
     return view
