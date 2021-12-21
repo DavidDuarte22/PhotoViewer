@@ -8,10 +8,11 @@
 
 import Foundation
 
-protocol LocalManagerDataDelegate:class {
+protocol LocalManagerDataDelegate:AnyObject {
   func keyChanged(key: LocalManagerData.DatasType, hasBeenAdded: Bool, id: Int)
 }
 
+// TODO: Avoid Singleton. Use DI Container
 class LocalManagerData {
   
   private init() { }

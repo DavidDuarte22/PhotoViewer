@@ -59,7 +59,6 @@ class PhotoDetailViewImpl: UIViewController {
   var cardContentView: UIView = {
     let cardView = UIView()
     cardView.layer.cornerRadius = 15.0
-    cardView.backgroundColor = .black
     return cardView
   }()
   
@@ -147,7 +146,6 @@ class PhotoDetailViewImpl: UIViewController {
   
   private func addClickToDismiss() {
     let dragGesture = UIPanGestureRecognizer(target: self, action:  #selector(dismissPresentedView(_:)))
-    //    let tapRecognizer = UITapGestureRecognizer(target: self, action:)
     
     dragGesture.cancelsTouchesInView = false
     self.view.addGestureRecognizer(dragGesture)

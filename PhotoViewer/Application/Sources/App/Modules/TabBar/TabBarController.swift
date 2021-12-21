@@ -30,7 +30,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     super.viewDidLoad()
     self.tabBar.tintColor = .lightGray
     self.tabBar.itemPositioning = .automatic
-    self.tabBar.barTintColor = .black
     
     self.delegate = self
   }

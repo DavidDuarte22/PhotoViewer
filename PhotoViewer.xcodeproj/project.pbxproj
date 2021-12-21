@@ -56,6 +56,7 @@
 		037585602764132D00904703 /* ServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584CE2762D4C600904703 /* ServiceInterface.swift */; };
 		037585612764133D00904703 /* PhotosRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584C92762D49D00904703 /* PhotosRequestDTO.swift */; };
 		037585622764134B00904703 /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584C82762D49D00904703 /* PhotoDTO.swift */; };
+		03904B3B2771F8C20034758B /* FavoritesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03904B3A2771F8C20034758B /* FavoritesInteractorTests.swift */; };
 		03C33C342764B22000E21ADE /* ServiceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C33C322764B21100E21ADE /* ServiceBuilder.swift */; };
 		03C33C352764B23800E21ADE /* ServiceBuilterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584BD2762D17A00904703 /* ServiceBuilterInterface.swift */; };
 		03C33C372764B8AA00E21ADE /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584832762CE3E00904703 /* HomeInteractor.swift */; };
@@ -166,6 +167,7 @@
 		037585212763EECF00904703 /* FavoritesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenterTests.swift; sourceTree = "<group>"; };
 		03758551276409F000904703 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
 		0375855E276411E900904703 /* FakeApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeApiService.swift; sourceTree = "<group>"; };
+		03904B3A2771F8C20034758B /* FavoritesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractorTests.swift; sourceTree = "<group>"; };
 		03C33C322764B21100E21ADE /* ServiceBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceBuilder.swift; sourceTree = "<group>"; };
 		03C33C3A2764BCE100E21ADE /* PhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTests.swift; sourceTree = "<group>"; };
 		03C33C3C2764BE7800E21ADE /* HomeModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModuleTests.swift; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 		0375851F2763EDCE00904703 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0387E5A0276D115B00FDB3E2 /* PhotoDetail */,
 				0375854E276409C300904703 /* Home */,
 				037585202763EDDB00904703 /* Favorites */,
 			);
@@ -488,6 +491,7 @@
 			isa = PBXGroup;
 			children = (
 				037585212763EECF00904703 /* FavoritesPresenterTests.swift */,
+				03904B3A2771F8C20034758B /* FavoritesInteractorTests.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -601,6 +605,13 @@
 				0375855E276411E900904703 /* FakeApiService.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		0387E5A0276D115B00FDB3E2 /* PhotoDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PhotoDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -814,6 +825,7 @@
 				03758552276409F000904703 /* HomeInteractorTests.swift in Sources */,
 				03C33C5A2765443600E21ADE /* PhotoDetailInteractor.swift in Sources */,
 				03C33C4F2765440800E21ADE /* FavoritesView.swift in Sources */,
+				03904B3B2771F8C20034758B /* FavoritesInteractorTests.swift in Sources */,
 				03C33C3B2764BCE100E21ADE /* PhotoTests.swift in Sources */,
 				03C33C4A276543FD00E21ADE /* TabBarRouter.swift in Sources */,
 				03C33C3F2764BE9000E21ADE /* HomePresenterTests.swift in Sources */,
@@ -992,6 +1004,7 @@
 				INFOPLIST_FILE = PhotoViewer/Environments/Production/Assets/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1003,7 +1016,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1019,6 +1032,7 @@
 				INFOPLIST_FILE = PhotoViewer/Environments/Production/Assets/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1030,7 +1044,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

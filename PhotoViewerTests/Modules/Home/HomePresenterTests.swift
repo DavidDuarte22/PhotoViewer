@@ -47,7 +47,7 @@ class HomePresenterTests: XCTestCase {
   }
   
   override func tearDown() {
-//    sup?.photos
+    sup = nil
     super.tearDown()
   }
   

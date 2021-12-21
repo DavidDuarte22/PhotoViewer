@@ -51,7 +51,6 @@ class HomeViewImpl: UIViewController {
     layout.delegate = self
     
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    collectionView?.backgroundColor = .black
     
     guard let collectionView = collectionView else {
       return

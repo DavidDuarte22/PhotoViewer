@@ -17,7 +17,6 @@ class FavoritesViewImpl: UIViewController {
     let tableView = UITableView()
     tableView.separatorStyle = .none
     tableView.showsVerticalScrollIndicator = false
-    tableView.backgroundColor = .black
     return tableView
   }()
   

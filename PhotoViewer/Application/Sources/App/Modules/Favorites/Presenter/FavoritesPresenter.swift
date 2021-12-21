@@ -28,7 +28,7 @@ class FavoritesPresenterImpl: FavoritesPresenterInterface {
     self.favoritesRouter = favoritesRouter
   }
   
-  internal func getFavoritesPhotos() {
+  private func getFavoritesPhotos() {
     
     var photosArray = [Photo]()
     let dispatchGroup = DispatchGroup()
@@ -37,7 +37,7 @@ class FavoritesPresenterImpl: FavoritesPresenterInterface {
       dispatchGroup.enter()
       
       self.getPhotoByID(photoID: photoID) { photo in
-        guard let photo = photo else { return }
+        guard let photo = photo else { return dispatchGroup.leave() }
         photosArray.append(photo)
         dispatchGroup.leave()
       }
@@ -48,7 +48,7 @@ class FavoritesPresenterImpl: FavoritesPresenterInterface {
     }
   }
   
-  internal func getPhotoByID(photoID: Int,
+  func getPhotoByID(photoID: Int,
                     completionHandler: @escaping (Photo?) -> Void ) {
     self.favoritesInteractor?.fetchPhoto(by: photoID) {  result in
       switch result {
@@ -94,6 +94,7 @@ extension FavoritesPresenterImpl {
   
   
   // TODO: Duplicated code
+  // Handle else and failure cases
   func likedPhoto(at indexPath: IndexPath) {
     guard let photoID = self.favoritesPhotos.value?[safe: indexPath.row]?.id else { return }
     self.favoritesInteractor?.setLikeToPhoto(photoId: photoID) { [weak self] result in
