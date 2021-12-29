@@ -27,6 +27,7 @@ enum HTTP {
     case invalidRequest
     case statusCode(Int)
     case unknown(Swift.Error)
+    case customMessage(String)
   }
 }
 

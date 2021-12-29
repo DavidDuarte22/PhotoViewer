@@ -64,7 +64,11 @@ final class MyFakeService: ApiServiceInterface {
       }
     } else {
       // Default success
-      completionHandler(.success(photoRequestDTO.photos[0]))
+      if byID == 3408744 {
+        completionHandler(.success(photoRequestDTO.photos[0]))
+      } else {
+        completionHandler(.failure(.customMessage("Incorrect ID or result error not setted")))
+      }
     }
   }
 }

@@ -11,7 +11,7 @@ import UIKit
 final class App {
   
   let services = ServiceBuilder()
-  
+  let dependencyContainer = DependencyContainer()
   // MARK: - singleton
   
   static let shared = App()
@@ -24,7 +24,7 @@ final class App {
   func instantiateRootTabBarController(into window: UIWindow) -> UIWindow {
     let submodules = (
       home: HomeModule.build(),
-      favorites: FavoritesModule.build()
+      favorites: FavoritesModule.build(container: dependencyContainer)
     )
     
     window.rootViewController = UINavigationController(rootViewController: TabBarModule.build(submodules: submodules))

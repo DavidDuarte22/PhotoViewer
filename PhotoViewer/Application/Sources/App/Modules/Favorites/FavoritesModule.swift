@@ -9,10 +9,11 @@
 import UIKit
 
 class FavoritesModule {
-  static func build() -> UIViewController {
+  
+  static func build(container: DependencyContainer) -> UIViewController {
     
     let router = FavoritesRouterImpl()
-    let interactor = FavoritesInteractorImpl()
+    let interactor = FavoritesInteractorImpl(dependencies: container)
     let presenter = FavoritesPresenterImpl(favoritesInteractor: interactor, favoritesRouter: router)
     let view = FavoritesViewImpl(presenter: presenter)
     

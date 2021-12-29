@@ -18,6 +18,6 @@ class HomeRouterImpl: HomeRouterInterface {
   weak var viewController: UIViewController?
   
   func navigateToPhotoDetail(photo: Photo) {
-    viewController?.navigationController?.present(PhotoDetailModule.build(photo: photo), animated: true)
+    viewController?.navigationController?.present(PhotoDetailModule.build(photo: photo, container: App.shared.dependencyContainer), animated: true)
   }
 }

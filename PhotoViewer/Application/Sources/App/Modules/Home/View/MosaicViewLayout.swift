@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MosaicViewLayoutDelegate:class {
+protocol MosaicViewLayoutDelegate:AnyObject {
   func collectionView(_ collectionView: UICollectionView,
                       heightForItemAtIndexPath indexPath: IndexPath) -> CGFloat
 }

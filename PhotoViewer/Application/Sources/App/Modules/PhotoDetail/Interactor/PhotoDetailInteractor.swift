@@ -15,12 +15,16 @@ protocol PhotoDetailInteractorInterface {
 }
 
 class PhotoDetailInteractorImpl: PhotoDetailInteractorInterface {
-    
-  let userDefaultsManager = LocalManagerData.shared
+  
+  typealias Dependencies = UserDefaultsInteractorFactory
+  
+  let dependencies: Dependencies
+
+  init(dependencies: Dependencies) {
+    self.dependencies = dependencies
+  }
   
   func setLikeToPhoto(photoId: Int, completionHandler: @escaping savedClosure) {
-    // TODO: Duplicated code. Unify
-    let result = userDefaultsManager.addObject(into: .favoritesPhotos, id: photoId)
-    completionHandler(.success(result))
+    self.dependencies.makeUserDefaultsInteractor().setLikeToPhoto(photoId: photoId, completionHandler: completionHandler)
   }
 }

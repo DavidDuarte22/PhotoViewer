@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031CB4562775DAF700782ACF /* UserDefaultsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031CB4552775DAF700782ACF /* UserDefaultsInteractor.swift */; };
+		031CB4572775EE8E00782ACF /* UserDefaultsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031CB4552775DAF700782ACF /* UserDefaultsInteractor.swift */; };
+		031CB4592778E84700782ACF /* FavoritesModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031CB4582778E84700782ACF /* FavoritesModuleTests.swift */; };
+		031CB45B2779007C00782ACF /* DependencyInjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031CB45A2779007C00782ACF /* DependencyInjectionContainer.swift */; };
 		037584472762CCC800904703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584462762CCC800904703 /* AppDelegate.swift */; };
 		037584492762CCC800904703 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584482762CCC800904703 /* SceneDelegate.swift */; };
 		037584502762CCCA00904703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375844F2762CCCA00904703 /* Assets.xcassets */; };
@@ -117,6 +121,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		031CB4552775DAF700782ACF /* UserDefaultsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsInteractor.swift; sourceTree = "<group>"; };
+		031CB4582778E84700782ACF /* FavoritesModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesModuleTests.swift; sourceTree = "<group>"; };
+		031CB45A2779007C00782ACF /* DependencyInjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionContainer.swift; sourceTree = "<group>"; };
 		037584432762CCC800904703 /* PhotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037584462762CCC800904703 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		037584482762CCC800904703 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -254,6 +261,7 @@
 				037584942762CF2E00904703 /* Favorites */,
 				037584772762CD9100904703 /* Home */,
 				037584952762CF4400904703 /* PhotoDetail */,
+				031CB4552775DAF700782ACF /* UserDefaultsInteractor.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -445,6 +453,7 @@
 				037584DC2762D5E800904703 /* Observable.swift */,
 				037584D72762D5C000904703 /* Helpers */,
 				037584C02762D19500904703 /* Extensions */,
+				031CB45A2779007C00782ACF /* DependencyInjectionContainer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -492,6 +501,7 @@
 			children = (
 				037585212763EECF00904703 /* FavoritesPresenterTests.swift */,
 				03904B3A2771F8C20034758B /* FavoritesInteractorTests.swift */,
+				031CB4582778E84700782ACF /* FavoritesModuleTests.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -761,6 +771,7 @@
 				0375849E2762CFB600904703 /* PhotoDetailInteractor.swift in Sources */,
 				037584B02762D07100904703 /* FavoritesModule.swift in Sources */,
 				037584812762CE0E00904703 /* HomeView.swift in Sources */,
+				031CB4562775DAF700782ACF /* UserDefaultsInteractor.swift in Sources */,
 				037584862762CE4600904703 /* HomeModule.swift in Sources */,
 				037584B22762D07B00904703 /* FavoritesInteractor.swift in Sources */,
 				037584932762CF1F00904703 /* TabBarModule.swift in Sources */,
@@ -783,6 +794,7 @@
 				037584882762CE5000904703 /* HomePresenter.swift in Sources */,
 				037584BC2762D17000904703 /* ServiceBuilder.swift in Sources */,
 				037584DA2762D5D900904703 /* UIImageLoaderHelper.swift in Sources */,
+				031CB45B2779007C00782ACF /* DependencyInjectionContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,7 +811,9 @@
 				03C33C41276543A600E21ADE /* PhotoDetailModule.swift in Sources */,
 				03C33C552765441A00E21ADE /* MosaicViewLayout.swift in Sources */,
 				03C33C592765443200E21ADE /* PhotoDetailView.swift in Sources */,
+				031CB4572775EE8E00782ACF /* UserDefaultsInteractor.swift in Sources */,
 				03C33C4B276543FE00E21ADE /* TabBarController.swift in Sources */,
+				031CB4592778E84700782ACF /* FavoritesModuleTests.swift in Sources */,
 				03C33C3D2764BE7800E21ADE /* HomeModuleTests.swift in Sources */,
 				03C33C572765442200E21ADE /* HomePresenter.swift in Sources */,
 				03C33C5C2765443E00E21ADE /* PhotoDetailRouter.swift in Sources */,

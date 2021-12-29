@@ -20,25 +20,32 @@ protocol FavoritesInteractorInterface {
 
 class FavoritesInteractorImpl: FavoritesInteractorInterface {
   
-  var favoritesID = Observable<[Int]>([])
-  let userDefaultsManager = LocalManagerData.shared
-
-  let services: ServiceBuilderInterface
+  typealias Dependencies = UserDefaultsInteractorFactory
   
-  init(services: ServiceBuilderInterface = App.shared.services) {
-    self.services = services
-    LocalManagerData.shared.delegate = self
+  let dependencies: Dependencies
+  let services: ServiceBuilderInterface = App.shared.services
+  var favoritesID = Observable<[Int]>([])
+  
+  init(dependencies: Dependencies) {
+    self.dependencies = dependencies
+
+    self.dependencies.makeUserDefaultsInteractor().favoritesID.bind { favorites in
+      self.favoritesID.value = favorites
+    }
+    
     getFavoritesIDs()
+
   }
   
   private func getFavoritesIDs() {
-    self.favoritesID.value = LocalManagerData.shared.getObjects(by: .favoritesPhotos)
+    self.dependencies.makeUserDefaultsInteractor().getFavoritesIDs()
   }
   
   func fetchPhoto(by id: Int, completionHandler: @escaping photoClosure) {
     self.services.api.photo(byID: id) { result in
       switch result {
       case .success(let photoDTO):
+        // TODO: Resolve this dependency. It's wrong
         let photo = HomeInteractorImpl.parsePhotoDTO(photoDTO: photoDTO)
         completionHandler(.success(photo))
       case .failure(let error):
@@ -48,20 +55,6 @@ class FavoritesInteractorImpl: FavoritesInteractorInterface {
   }
   
   func setLikeToPhoto(photoId: Int, completionHandler: @escaping savedClosure) {
-    // TODO: Duplicated code. Unify
-    let result = userDefaultsManager.addObject(into: .favoritesPhotos, id: photoId)
-    completionHandler(.success(result))
-  }
-}
-
-extension FavoritesInteractorImpl: LocalManagerDataDelegate {
-  func keyChanged(key: LocalManagerData.DatasType, hasBeenAdded: Bool, id: Int) {
-    if !hasBeenAdded {
-      if let index = self.favoritesID.value.firstIndex(of: id) {
-        self.favoritesID.value.remove(at: index)
-      }
-    } else {
-      self.favoritesID.value.append(id)
-    }
+    self.dependencies.makeUserDefaultsInteractor().setLikeToPhoto(photoId: photoId, completionHandler: completionHandler)
   }
 }

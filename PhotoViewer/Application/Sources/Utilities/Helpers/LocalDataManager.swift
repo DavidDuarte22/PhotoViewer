@@ -9,18 +9,22 @@
 import Foundation
 
 protocol LocalManagerDataDelegate:AnyObject {
-  func keyChanged(key: LocalManagerData.DatasType, hasBeenAdded: Bool, id: Int)
+  func keyChanged(key: DatasType, hasBeenAdded: Bool, id: Int)
 }
 
-// TODO: Avoid Singleton. Use DI Container
-class LocalManagerData {
+protocol LocalManagerDataInterface {
+  func addObject(into key: DatasType, id: Int) -> Bool
+  func setKey(into key: DatasType, id: Int, objectSaved: [Int], added: Bool)
+  func getObjects(by key: DatasType) -> [Int]
   
-  private init() { }
+  var delegate: LocalManagerDataDelegate? { get set }
+}
+
+class LocalManagerData: LocalManagerDataInterface {
   
   weak var delegate: LocalManagerDataDelegate?
 
   let defaults = UserDefaults.standard
-  static let shared = LocalManagerData()
   
   func getObjects(by key: DatasType) -> [Int] {
     return defaults.object(forKey: key.rawValue) as? [Int] ?? [Int]()
@@ -41,12 +45,12 @@ class LocalManagerData {
     }
   }
   
-  private func setKey(into key: DatasType, id: Int, objectSaved: [Int], added: Bool) {
+  func setKey(into key: DatasType, id: Int, objectSaved: [Int], added: Bool) {
     defaults.set(objectSaved, forKey: key.rawValue)
     delegate?.keyChanged(key: .favoritesPhotos, hasBeenAdded: added, id: id)
   }
-  
-  enum DatasType: String {
-    case favoritesPhotos
-  }
+}
+
+enum DatasType: String {
+  case favoritesPhotos
 }
