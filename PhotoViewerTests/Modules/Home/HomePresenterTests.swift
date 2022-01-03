@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Services
 @testable import PhotoViewer
 
 class HomePresenterTests: XCTestCase {

@@ -19,7 +19,7 @@ class FavoritesModuleTests: XCTestCase {
   }
   
   func testHomeModuleInit_OK() {
-    let moduleInstance = FavoritesModule.build()
+    let moduleInstance = FavoritesModule.build(container: DependencyContainer())
     XCTAssertNotNil(moduleInstance)
   }
 }

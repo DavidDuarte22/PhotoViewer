@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Services
 
 final class ServiceBuilder: ServiceBuilderInterface {
   

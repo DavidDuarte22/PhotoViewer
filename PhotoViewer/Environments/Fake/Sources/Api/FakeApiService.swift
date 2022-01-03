@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Services
 
 final class MyFakeService: ApiServiceInterface {
   var baseUrl: String

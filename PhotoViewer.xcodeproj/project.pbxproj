@@ -13,6 +13,8 @@
 		031CB45B2779007C00782ACF /* DependencyInjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031CB45A2779007C00782ACF /* DependencyInjectionContainer.swift */; };
 		031CB461277C656100782ACF /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031CB460277C656100782ACF /* UIViewController+Extension.swift */; };
 		0375768B2782FEE70039F922 /* Services in Frameworks */ = {isa = PBXBuildFile; productRef = 0375768A2782FEE70039F922 /* Services */; };
+		0375768C278313C20039F922 /* DependencyInjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031CB45A2779007C00782ACF /* DependencyInjectionContainer.swift */; };
+		0375768D278315520039F922 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031CB460277C656100782ACF /* UIViewController+Extension.swift */; };
 		037584472762CCC800904703 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584462762CCC800904703 /* AppDelegate.swift */; };
 		037584492762CCC800904703 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037584482762CCC800904703 /* SceneDelegate.swift */; };
 		037584502762CCCA00904703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0375844F2762CCCA00904703 /* Assets.xcassets */; };
@@ -765,6 +767,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0375768C278313C20039F922 /* DependencyInjectionContainer.swift in Sources */,
 				03C33C582765442E00E21ADE /* ImageView.swift in Sources */,
 				03C33C46276543EA00E21ADE /* UIView+Extension.swift in Sources */,
 				03C33C4D2765440300E21ADE /* FavoritesModule.swift in Sources */,
@@ -794,6 +797,7 @@
 				03C33C402765439200E21ADE /* HomeRouter.swift in Sources */,
 				03C33C47276543EC00E21ADE /* UiimageView+Extension.swift in Sources */,
 				03C33C5E2765444300E21ADE /* SceneDelegate.swift in Sources */,
+				0375768D278315520039F922 /* UIViewController+Extension.swift in Sources */,
 				03758552276409F000904703 /* HomeInteractorTests.swift in Sources */,
 				03C33C5A2765443600E21ADE /* PhotoDetailInteractor.swift in Sources */,
 				03C33C4F2765440800E21ADE /* FavoritesView.swift in Sources */,

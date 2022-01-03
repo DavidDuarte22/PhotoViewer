@@ -6,15 +6,19 @@
 //
 
 import XCTest
+import Services
 @testable import PhotoViewer
 
 class FavoritesInteractorTests: XCTestCase {
   
   var sup: FavoritesInteractorInterface?
-  
+     
+    
   override func setUp() {
     super.setUp()
-    sup = FavoritesInteractorImpl(userDefaultsInteractor: MockUserDefaultsInteractor())
+      let container: DependencyContainerInterface = MockDependencyContainer()
+
+    sup = FavoritesInteractorImpl(dependencies: container)
   }
   
   override func tearDown() {
@@ -111,23 +115,45 @@ class FavoritesInteractorTests: XCTestCase {
       XCTFail()
     }
   }
+    
+    class MockDependencyContainer: DependencyContainerInterface,
+                                    LocalDataManagerFactory,
+                                   UserDefaultsInteractorFactory {
+        
+        lazy var localDataManager: LocalManagerDataInterface = MockLocalManagerData()
+        lazy var userDefaultsInteractor: UserDefaultsInteractorInterface & UserDefaultsInteractorObsInterface = MockUserDefaultsInteractor(dependencies: self)
+    
+                                   
+      func makeUserDefaultsInteractor() -> UserDefaultsInteractorInterface & UserDefaultsInteractorObsInterface {
+        return userDefaultsInteractor
+      }
+      
+      func makeLocalDataManager() -> LocalManagerDataInterface {
+        return localDataManager
+      }
+    }
   
   class MockUserDefaultsInteractor: UserDefaultsInteractorInterface, UserDefaultsInteractorObsInterface, LocalManagerDataDelegate {
     
-    init() {
-      userDefaultsManager.delegate = self
-    }
+      typealias Dependencies = LocalDataManagerFactory
+        
+      init(dependencies: Dependencies){
+        self.dependencies = dependencies
+        var manager = dependencies.makeLocalDataManager()
+        manager.delegate = self
+      }
+      
     
     var favoritesID = Observable<[Int]>([])
-    var userDefaultsManager = MockLocalManagerData()
-    
+      private let dependencies: Dependencies
+
     func setLikeToPhoto(photoId: Int, completionHandler: @escaping savedClosure) {
-      let result = userDefaultsManager.addObject(into: .favoritesPhotos, id: photoId)
+      let result = self.dependencies.makeLocalDataManager().addObject(into: .favoritesPhotos, id: photoId)
       completionHandler(.success(result))
     }
     
     func getFavoritesIDs() {
-      self.favoritesID.value = userDefaultsManager.getObjects(by: .favoritesPhotos)
+      self.favoritesID.value = self.dependencies.makeLocalDataManager().getObjects(by: .favoritesPhotos)
     }
     
     func keyChanged(key: DatasType, hasBeenAdded: Bool, id: Int) {
