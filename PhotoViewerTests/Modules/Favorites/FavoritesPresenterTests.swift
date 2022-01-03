@@ -244,6 +244,8 @@ class FavoritesPresenterTests: XCTestCase {
   }
   
   class MockFavoritesRouter: FavoritesRouterInterface {
-    
+    func showErrorAlert(title: String, message: String, options: String...) {
+      
+    }
   }
 }

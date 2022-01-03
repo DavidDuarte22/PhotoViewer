@@ -92,9 +92,6 @@ extension FavoritesPresenterImpl {
     return nil
   }
   
-  
-  // TODO: Duplicated code
-  // Handle else and failure cases
   func likedPhoto(at indexPath: IndexPath) {
     guard let photoID = self.favoritesPhotos.value?[safe: indexPath.row]?.id else { return }
     self.favoritesInteractor?.setLikeToPhoto(photoId: photoID) { [weak self] result in
@@ -104,9 +101,8 @@ extension FavoritesPresenterImpl {
           self?.favoritesPhotos.value?.remove(at: indexPath.row)
         }
         self?.getFavoritesPhotos()
-      case .failure(_):
-        // TODO
-        break
+      case .failure(let error):
+        self?.favoritesRouter?.showErrorAlert(title: "Something went wrong :(", message: error.localizedDescription, options: "OK")
       }
     }
   }

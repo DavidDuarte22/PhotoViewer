@@ -13,6 +13,7 @@
  */
 
 import UIKit
+import Services
 
 class UIImageLoaderHelper {
   static let loader = UIImageLoaderHelper()

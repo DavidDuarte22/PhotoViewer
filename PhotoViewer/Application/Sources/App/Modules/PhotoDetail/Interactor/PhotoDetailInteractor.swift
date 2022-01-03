@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Services
 
 protocol PhotoDetailInteractorInterface {
   func setLikeToPhoto(photoId: Int, completionHandler: @escaping savedClosure)

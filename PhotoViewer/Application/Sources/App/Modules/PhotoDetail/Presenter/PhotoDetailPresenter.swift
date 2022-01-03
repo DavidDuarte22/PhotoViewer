@@ -45,15 +45,14 @@ class PhotoDetailPresenterImpl: PhotoDetailPresenterInterface {
     return newHeight
   }
   
-  // TODO: Duplicated code. Move to abstract class
+  // TODO: Handle else and failure cases
   func likePhoto() {
     self.photoDetailInteractor?.setLikeToPhoto(photoId: photoItem.value.id) { result in
       switch result {
       case .success(let isLiked):
         self.photoItem.value.liked = isLiked
-      case .failure(_):
-        // TODO
-        break
+      case .failure(let error):
+        self.photoDetailRouter?.showErrorAlert(title: "Something went wrong :(", message: error.localizedDescription, options: "OK")
       }
     }
   }

@@ -199,16 +199,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "060544B5-9980-4135-8A3B-1453C1CEA527"
+            uuid = "950EB975-2C28-496A-B502-1DC7BCA3F44D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PhotoViewer/Application/Sources/App/Modules/UserDefaultsInteractor.swift"
+            filePath = "PhotoViewerTests/Modules/Favorites/FavoritesPresenterTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "keyChanged(key:hasBeenAdded:id:)"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
+            landmarkName = "showErrorAlert(title:message:options:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

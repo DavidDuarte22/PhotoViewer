@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Services",
+        "repositoryURL": "https://github.com/DavidDuarte22/PhotoViewer-Services-SWM.git",
+        "state": {
+          "branch": "main",
+          "revision": "f70c50dbe61e9400b0f5fe696312a43f67d4cc18",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

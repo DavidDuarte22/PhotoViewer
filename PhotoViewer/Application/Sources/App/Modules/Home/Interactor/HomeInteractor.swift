@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Services
 
 protocol HomeInteractorInterface {
   func fetchPhotos(page: Int, completionHandler: @escaping photosClosure)

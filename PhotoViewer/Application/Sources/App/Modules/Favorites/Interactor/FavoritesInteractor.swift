@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Services
 
 protocol FavoritesInteractorInterface {
   func setLikeToPhoto(photoId: Int, completionHandler: @escaping savedClosure)
@@ -45,7 +46,6 @@ class FavoritesInteractorImpl: FavoritesInteractorInterface {
     self.services.api.photo(byID: id) { result in
       switch result {
       case .success(let photoDTO):
-        // TODO: Resolve this dependency. It's wrong
         let photo = HomeInteractorImpl.parsePhotoDTO(photoDTO: photoDTO)
         completionHandler(.success(photo))
       case .failure(let error):

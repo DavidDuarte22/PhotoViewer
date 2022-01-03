@@ -9,11 +9,16 @@
 import UIKit
 
 protocol FavoritesRouterInterface {
-  
+  func showErrorAlert(title: String, message: String, options: String...)
 }
 
 class FavoritesRouterImpl: FavoritesRouterInterface {
   
   weak var viewController: UIViewController?
-
+  
+  func showErrorAlert(title: String, message: String, options: String...) {
+    viewController?.presentAlertWithTitleAndMessage(title: title, message: message, options: options) { completion in
+      
+    }
+  }
 }
