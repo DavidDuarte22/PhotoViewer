@@ -17,19 +17,28 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_13.1.app
       - name: iOS build setup
         run: >-
-          xcodebuild test -xcodeproj PhotoViewer.xcodeproj
-          -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone
-          13,OS=15.0'
+          xcodebuild \
+          -project PhotoViewer.xcodeproj \
+          -scheme PhotoViewer \
+          -sdk iphonesimulator \
+          -destination 'platform=iOS Simulator,name=iPhone 13,OS=15.0' \
+          test
       - name: testing ... iPhone 13 Pro Max
         run: >-
-          xcodebuild test -xcodeproj PhotoViewer.xcodeproj
-          -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone 13
-          Pro Max,OS=15.0'
+          xcodebuild \
+          -project PhotoViewer.xcodeproj \
+          -scheme PhotoViewer \
+          -sdk iphonesimulator \
+          -destination 'platform=iOS Simulator,name=iPhone 13 Pro Max,OS=15.0' \
+          test
       - name: testing ... iPhone 8
         run: >-
-          xcodebuild test -xcodeproj PhotoViewer.xcodeproj
-          -scheme TestApp -destination 'platform=iOS Simulator,name=iPhone
-          8,OS=15.0'
+          xcodebuild \
+          -project PhotoViewer.xcodeproj \
+          -scheme PhotoViewer \
+          -sdk iphonesimulator \
+          -destination 'platform=iOS Simulator,name=iPhone 8,OS=15.0' \
+          test
       - name: Prepare iOS 12 simulator - XCode 10.3
         run: |
           sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
