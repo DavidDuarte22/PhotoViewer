@@ -9,7 +9,7 @@
 import Foundation
 import Services
 
-protocol FavoritesInteractorInterface {
+protocol FavoritesInteractorInterface: AnyObject {
   func setLikeToPhoto(photoId: Int, completionHandler: @escaping savedClosure)
   func fetchPhoto(by id: Int, completionHandler: @escaping photoClosure)
   

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Services
 
 protocol FavoritesPresenterInterface {
     var favoritesPhotos: Observable<[Photo]?> { get set }
@@ -38,8 +39,12 @@ class FavoritesPresenterImpl: FavoritesPresenterInterface {
         for photoID in photosIDs {
             dispatchGroup.enter()
             
-            self.getPhotoByID(photoID: photoID) { photo in
-                guard let photo = photo else { return dispatchGroup.leave() }
+            self.getPhotoByID(photoID: photoID) { photo, error in
+                guard let photo = photo else {
+                    self.dependencies.makeFavoritesRouter().showErrorAlert(title: "Something went wrong :(", message: error?.localizedDescription ?? "", options: "OK")
+                    dispatchGroup.leave()
+                    return
+                }
                 photosArray.append(photo)
                 dispatchGroup.leave()
             }
@@ -51,16 +56,13 @@ class FavoritesPresenterImpl: FavoritesPresenterInterface {
     }
     
     func getPhotoByID(photoID: Int,
-                      completionHandler: @escaping (Photo?) -> Void ) {
+                      completionHandler: @escaping (Photo?, HTTP.Error?) -> Void ) {
         self.dependencies.makeFavoritesInteractor().fetchPhoto(by: photoID) {  result in
             switch result {
             case .success(let photo):
-                completionHandler(photo)
-                break
-            case .failure(_):
-                // TODO
-                completionHandler(nil)
-                break
+                completionHandler(photo, nil)
+            case .failure(let error):
+                completionHandler(nil, error)
             }
         }
     }

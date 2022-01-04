@@ -16,7 +16,7 @@ class FavoritesInteractorTests: XCTestCase {
     
   override func setUp() {
     super.setUp()
-      let container: DependencyContainerInterface = MockDependencyContainer()
+      let container = MockDependencyContainer()
 
     sup = FavoritesInteractorImpl(dependencies: container)
   }
@@ -116,8 +116,7 @@ class FavoritesInteractorTests: XCTestCase {
     }
   }
     
-    class MockDependencyContainer: DependencyContainerInterface,
-                                    LocalDataManagerFactory,
+    class MockDependencyContainer: LocalDataManagerFactory,
                                    UserDefaultsInteractorFactory {
         
         lazy var localDataManager: LocalManagerDataInterface = MockLocalManagerData()
