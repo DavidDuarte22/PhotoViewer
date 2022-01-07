@@ -5,20 +5,11 @@
 //  Created by David Duarte on 26/12/2021.
 //
 
-protocol DependencyContainerInterface: LocalDataManagerFactory,
-                                       UserDefaultsInteractorFactory,
-                                       FavoritesRouterFactory,
-                                       FavoritesInteractorFactory,
-                                       FavoritesPresenterFactory
-{
-    // UserDefaults
-    var localDataManager: LocalManagerDataInterface { get }
-    var userDefaultsInteractor: UserDefaultsInteractorInterface & UserDefaultsInteractorObsInterface { get }
-    // Favorites
-    var favoritesRouter: FavoritesRouterInterface { get }
-    var favoritesInteractor: FavoritesInteractorInterface { get }
-    var favoritesPresenter: FavoritesPresenterInterface { get }
-}
+protocol DependencyContainerInterface: UserDefaultsContainerFactory,
+                                       LocalDataManagerFactory,
+                                       FavoritesContainerFactory,
+                                       PhotoDetailContainerInterface
+{ }
 
 class DependencyContainer: DependencyContainerInterface {
     // UserDefaults
@@ -28,26 +19,9 @@ class DependencyContainer: DependencyContainerInterface {
     lazy var favoritesRouter: FavoritesRouterInterface = FavoritesRouterImpl()
     lazy var favoritesInteractor: FavoritesInteractorInterface = FavoritesInteractorImpl(dependencies: self)
     lazy var favoritesPresenter: FavoritesPresenterInterface = FavoritesPresenterImpl(dependencies: self)
-}
-
-// MARK: Dependency factories
-// UserDefaults
-protocol LocalDataManagerFactory {
-    func makeLocalDataManager() -> LocalManagerDataInterface
-}
-protocol UserDefaultsInteractorFactory {
-    func makeUserDefaultsInteractor() -> UserDefaultsInteractorInterface & UserDefaultsInteractorObsInterface
-}
-
-//Favorites Module
-protocol FavoritesRouterFactory {
-    func makeFavoritesRouter() -> FavoritesRouterInterface
-}
-protocol FavoritesInteractorFactory {
-    func makeFavoritesInteractor() -> FavoritesInteractorInterface
-}
-protocol FavoritesPresenterFactory {
-    func makeFavoritesPresenter() -> FavoritesPresenterInterface
+    // PhotoDetail
+    lazy var photoDetailRouter: PhotoDetailRouterInterface = PhotoDetailRouterImpl()
+    lazy var photoDetailInteractor: PhotoDetailInteractorInterface = PhotoDetailInteractorImpl(dependencies: self)
 }
 
 // MARK: Factories' extension
@@ -68,5 +42,12 @@ extension DependencyContainer {
     }
     func makeFavoritesPresenter() -> FavoritesPresenterInterface {
         return favoritesPresenter
+    }
+    // PhotoDetail Module
+    func makePhotoDetailRouter() -> PhotoDetailRouterInterface {
+        return photoDetailRouter
+    }
+    func makePhotoDetailInteractor() -> PhotoDetailInteractorInterface {
+        return photoDetailInteractor
     }
 }

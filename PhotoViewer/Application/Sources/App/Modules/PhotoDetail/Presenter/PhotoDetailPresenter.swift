@@ -9,51 +9,41 @@
 import UIKit
 
 protocol PhotoDetailPresenterInterface {
-  var photoItem: Observable<Photo> { get set }
-  func getPhotographer() -> String
-  func getImageAspect(view: UIView) -> CGFloat
-  func getPhotoUrl() -> URL?
-  func likePhoto()
+    var photoItem: Observable<Photo> { get set }
+    func getPhotographer() -> String
+    func getImageAspect(view: UIView) -> CGFloat
+    func getPhotoUrl() -> URL?
+    func likePhoto()
 }
 
 class PhotoDetailPresenterImpl: PhotoDetailPresenterInterface {
-  
-  var photoDetailRouter: PhotoDetailRouterInterface?
-  var photoDetailInteractor: PhotoDetailInteractorInterface?
-  
-  var photoItem: Observable<Photo>
-  
-  required init(photoDetailInteractor: PhotoDetailInteractorInterface,
-                photoDetailRouter: PhotoDetailRouterInterface,
-                photo: Photo){
-    self.photoDetailInteractor = photoDetailInteractor
-    self.photoDetailRouter = photoDetailRouter
-    photoItem = Observable<Photo>.init(photo)
-  }
-  
-  func getPhotographer() -> String {
-    return self.photoItem.value.photographer
-  }
-  
-  func getPhotoUrl() -> URL? {
-    return URL(string: self.photoItem.value.originalImage)
-  }
-  
-  func getImageAspect(view: UIView) -> CGFloat {
-    let width = view.bounds.width
-    let newHeight = CGFloat(width) * CGFloat(self.photoItem.value.height) / CGFloat(self.photoItem.value.width)
-    return newHeight
-  }
-  
-  // TODO: Handle else and failure cases
-  func likePhoto() {
-    self.photoDetailInteractor?.setLikeToPhoto(photoId: photoItem.value.id) { result in
-      switch result {
-      case .success(let isLiked):
-        self.photoItem.value.liked = isLiked
-      case .failure(let error):
-        self.photoDetailRouter?.showErrorAlert(title: "Something went wrong :(", message: error.localizedDescription, options: "OK")
-      }
+    
+    typealias Dependencies = PhotoDetailRouterFactory & PhotoDetailInteractorFactory
+    
+    var dependencies: Dependencies
+    var photoItem: Observable<Photo>
+    
+    required init(dependencies: Dependencies, photo: Photo){
+        self.dependencies = dependencies
+        photoItem = Observable<Photo>.init(photo)
     }
-  }
+    
+    func getPhotographer() -> String {
+        return self.photoItem.value.photographer
+    }
+    
+    func getPhotoUrl() -> URL? {
+        return URL(string: self.photoItem.value.originalImage)
+    }
+    
+    func getImageAspect(view: UIView) -> CGFloat {
+        let width = view.bounds.width
+        let newHeight = CGFloat(width) * CGFloat(self.photoItem.value.height) / CGFloat(self.photoItem.value.width)
+        return newHeight
+    }
+    
+    // TODO: Handle else and failure cases
+    func likePhoto() {
+        self.photoItem.value.liked = self.dependencies.makePhotoDetailInteractor().setLikeToPhoto(photoId: photoItem.value.id)
+    }
 }

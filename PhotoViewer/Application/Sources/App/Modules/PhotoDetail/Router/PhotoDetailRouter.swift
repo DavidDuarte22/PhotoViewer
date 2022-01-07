@@ -9,17 +9,18 @@
 import UIKit
 
 
-protocol PhotoDetailRouterInterface {
-  func showErrorAlert(title: String, message: String, options: String...)
+protocol PhotoDetailRouterInterface: AnyObject {
+    func showErrorAlert(title: String, message: String, options: String...)
+    var viewController: UIViewController? { get set }
 }
 
 class PhotoDetailRouterImpl: PhotoDetailRouterInterface {
-  
-  weak var viewController: UIViewController?
-  
-  func showErrorAlert(title: String, message: String, options: String...) {
-    viewController?.presentAlertWithTitleAndMessage(title: title, message: message, options: options) { completion in
-      
+    
+    weak var viewController: UIViewController?
+    
+    func showErrorAlert(title: String, message: String, options: String...) {
+        viewController?.presentAlertWithTitleAndMessage(title: title, message: message, options: options) { completion in
+            
+        }
     }
-  }
 }

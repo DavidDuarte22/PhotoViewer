@@ -9,9 +9,7 @@ import Foundation
 import Services
 
 protocol UserDefaultsInteractorInterface {
-  func setLikeToPhoto(photoId: Int, completionHandler: @escaping savedClosure)
-
-  typealias savedClosure = (Result<Bool, HTTP.Error>) -> Void
+  func setLikeToPhoto(photoId: Int) -> Bool
 }
 
 protocol UserDefaultsInteractorObsInterface {
@@ -31,9 +29,8 @@ class UserDefaultsInteractorImpl: UserDefaultsInteractorInterface, UserDefaultsI
   private let dependencies: Dependencies
   var favoritesID = Observable<[Int]>([])
 
-  func setLikeToPhoto(photoId: Int, completionHandler: @escaping savedClosure) {
-    let result = self.dependencies.makeLocalDataManager().addObject(into: .favoritesPhotos, id: photoId)
-    completionHandler(.success(result))
+  func setLikeToPhoto(photoId: Int) -> Bool {
+    return self.dependencies.makeLocalDataManager().addObject(into: .favoritesPhotos, id: photoId)
   }
   
   func getFavoritesIDs() {

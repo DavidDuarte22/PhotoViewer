@@ -98,16 +98,11 @@ extension FavoritesPresenterImpl {
     
     func likedPhoto(at indexPath: IndexPath) {
         guard let photoID = self.favoritesPhotos.value?[safe: indexPath.row]?.id else { return }
-        self.dependencies.makeFavoritesInteractor().setLikeToPhoto(photoId: photoID) { [weak self] result in
-            switch result {
-            case .success(let isLiked):
-                if !isLiked {
-                    self?.favoritesPhotos.value?.remove(at: indexPath.row)
-                }
-                self?.getFavoritesPhotos()
-            case .failure(let error):
-                self?.dependencies.makeFavoritesRouter().showErrorAlert(title: "Something went wrong :(", message: error.localizedDescription, options: "OK")
-            }
-        }
+        let isLiked = self.dependencies.makeFavoritesInteractor().setLikeToPhoto(photoId: photoID)
+        
+        if !isLiked {
+            self.favoritesPhotos.value?.remove(at: indexPath.row)
+        } 
+        self.getFavoritesPhotos()
     }
 }

@@ -9,23 +9,23 @@
 import Foundation
 import Services
 
-protocol PhotoDetailInteractorInterface {
-  func setLikeToPhoto(photoId: Int, completionHandler: @escaping savedClosure)
-  
-  typealias savedClosure = (Result<Bool, HTTP.Error>) -> Void
+protocol PhotoDetailInteractorInterface: AnyObject {
+    /// This function returns the new value of the photo.like.
+    /// Could also return an error due it access to the db and could throws
+    func setLikeToPhoto(photoId: Int) -> Bool
 }
 
 class PhotoDetailInteractorImpl: PhotoDetailInteractorInterface {
-  
-  typealias Dependencies = UserDefaultsInteractorFactory
-  
-  let dependencies: Dependencies
-
-  init(dependencies: Dependencies) {
-    self.dependencies = dependencies
-  }
-  
-  func setLikeToPhoto(photoId: Int, completionHandler: @escaping savedClosure) {
-    self.dependencies.makeUserDefaultsInteractor().setLikeToPhoto(photoId: photoId, completionHandler: completionHandler)
-  }
+    
+    typealias Dependencies = UserDefaultsInteractorFactory
+    
+    let dependencies: Dependencies
+    
+    init(dependencies: Dependencies) {
+        self.dependencies = dependencies
+    }
+    
+    func setLikeToPhoto(photoId: Int) -> Bool {
+        return self.dependencies.makeUserDefaultsInteractor().setLikeToPhoto(photoId: photoId)
+    }
 }

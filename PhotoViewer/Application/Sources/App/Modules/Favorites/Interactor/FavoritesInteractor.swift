@@ -10,7 +10,7 @@ import Foundation
 import Services
 
 protocol FavoritesInteractorInterface: AnyObject {
-  func setLikeToPhoto(photoId: Int, completionHandler: @escaping savedClosure)
+  func setLikeToPhoto(photoId: Int) -> Bool
   func fetchPhoto(by id: Int, completionHandler: @escaping photoClosure)
   
   var favoritesID: Observable<[Int]> { get set }
@@ -54,7 +54,7 @@ class FavoritesInteractorImpl: FavoritesInteractorInterface {
     }
   }
   
-  func setLikeToPhoto(photoId: Int, completionHandler: @escaping savedClosure) {
-    self.dependencies.makeUserDefaultsInteractor().setLikeToPhoto(photoId: photoId, completionHandler: completionHandler)
+  func setLikeToPhoto(photoId: Int) -> Bool {
+    return self.dependencies.makeUserDefaultsInteractor().setLikeToPhoto(photoId: photoId)
   }
 }

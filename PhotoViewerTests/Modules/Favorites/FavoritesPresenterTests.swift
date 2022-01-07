@@ -12,11 +12,11 @@ class FavoritesPresenterTests: XCTestCase {
     var sup: FavoritesPresenterImpl?
     
     var mockPhotos = [Photo]()
-    let interactor = MockDependencyContainer()
+    let mockContainer = MockDependencyContainer()
 
     override func setUp() {
         super.setUp()
-        sup = FavoritesPresenterImpl(dependencies: interactor)
+        sup = FavoritesPresenterImpl(dependencies: mockContainer)
         mockPhotos = [
             Photo(id: 15286, width: 2500, height: 1667, originalImage: "https://images.pexels.com/photos/15286/pexels-photo.jpg", smallImage: "https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350", photographer: "Luis del Río", liked: false),
             Photo(id: 624015, width: 4216, height: 2848, originalImage: "https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg", smallImage: "https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg?auto=compress&cs=tinysrgb&h=350", photographer: "Frans Van Heerden", liked: false),
@@ -33,8 +33,8 @@ class FavoritesPresenterTests: XCTestCase {
     
     func testGetPhotoByID_OK() {
         
-        interactor.makeFavoritesInteractor().mockPhotos = mockPhotos
-        interactor.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
+        mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
+        mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
         sup?.getPhotoByID(photoID: 15286) { result, error in
             guard let photo = result else {
                 return XCTFail()
@@ -44,8 +44,8 @@ class FavoritesPresenterTests: XCTestCase {
     }
     
     func testGetPhotoByID_NotOK() {
-        interactor.makeFavoritesInteractor().mockPhotos = mockPhotos
-        interactor.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
+        mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
+        mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
         sup?.getPhotoByID(photoID: 1) { result, error in
             XCTAssertNil(result)
             XCTAssertNotNil(error)
@@ -53,15 +53,15 @@ class FavoritesPresenterTests: XCTestCase {
     }
     
     func testSetInteractorIDsObserver_OK() {
-        interactor.makeFavoritesInteractor().mockPhotos = mockPhotos
-        interactor.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
+        mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
+        mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
         sup?.setInteractorIDsObserver()
         XCTAssertEqual(sup?.photosIDs.count, 3)
     }
     
     func testGetFavoritesPhotos_OK() {
-        interactor.makeFavoritesInteractor().mockPhotos = mockPhotos
-        interactor.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897, 9999]
+        mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
+        mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897, 9999]
         sup?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 2 seconds")], timeout: 1.0)
@@ -70,9 +70,9 @@ class FavoritesPresenterTests: XCTestCase {
     }
     
     func testGetFavoritesPhotos_NotOK_getPhotoByID_FailureClosure() {
-        interactor.makeFavoritesInteractor().mockPhotos = mockPhotos
+        mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         // last id is incorrect and won't fetch that photo
-        interactor.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897, 0]
+        mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897, 0]
         sup?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
@@ -82,9 +82,9 @@ class FavoritesPresenterTests: XCTestCase {
     }
     
     func testGetFavoritesPhotos_NotOK_getPhotoByID_FailureClosure2() {
-        interactor.makeFavoritesInteractor().mockPhotos = mockPhotos
+        mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         // first id is incorrect and won't fetch that photo
-        interactor.makeFavoritesInteractor().favoritesID.value = [0, 624015, 572897, 9999]
+        mockContainer.makeFavoritesInteractor().favoritesID.value = [0, 624015, 572897, 9999]
         sup?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for n seconds")], timeout: 1.0)
@@ -94,8 +94,8 @@ class FavoritesPresenterTests: XCTestCase {
     }
     
     func testTableViewRows_OK() {
-        interactor.makeFavoritesInteractor().mockPhotos = mockPhotos
-        interactor.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
+        mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
+        mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
         sup?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
@@ -120,8 +120,8 @@ class FavoritesPresenterTests: XCTestCase {
     }
     
     func testGetPhotoUrl_OK() {
-        interactor.makeFavoritesInteractor().mockPhotos = mockPhotos
-        interactor.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
+        mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
+        mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
         sup?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
@@ -132,8 +132,8 @@ class FavoritesPresenterTests: XCTestCase {
     }
     
     func testGetPhotoUrl_NotOK_IndexError() {
-        interactor.makeFavoritesInteractor().mockPhotos = mockPhotos
-        interactor.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
+        mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
+        mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
         sup?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
@@ -145,8 +145,8 @@ class FavoritesPresenterTests: XCTestCase {
     }
     
     func testGetPhotoUrl_NotOK_URLError() {
-        interactor.makeFavoritesInteractor().mockPhotos = mockPhotos
-        interactor.makeFavoritesInteractor().favoritesID.value = [9999]
+        mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
+        mockContainer.makeFavoritesInteractor().favoritesID.value = [9999]
         sup?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
@@ -158,8 +158,8 @@ class FavoritesPresenterTests: XCTestCase {
     }
     
     func testLikeToPhoto_OK_BothScenarios() {
-        interactor.makeFavoritesInteractor().mockPhotos = mockPhotos
-        interactor.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
+        mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
+        mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
         sup?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
@@ -178,8 +178,8 @@ class FavoritesPresenterTests: XCTestCase {
     
     // Just check the return in else statement wrapping the Index. Shouldn't crash
     func testLikeToPhoto_NotOK_IndexError() {
-        interactor.makeFavoritesInteractor().mockPhotos = mockPhotos
-        interactor.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
+        mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
+        mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
         sup?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
@@ -190,8 +190,8 @@ class FavoritesPresenterTests: XCTestCase {
     
     //TODO:
     func testLikeToPhoto_NotOK_FailureClosure() {
-        interactor.makeFavoritesInteractor().mockPhotos = mockPhotos
-        interactor.makeFavoritesInteractor().favoritesID.value = [9999]
+        mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
+        mockContainer.makeFavoritesInteractor().favoritesID.value = [9999]
         sup?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
@@ -216,25 +216,27 @@ class FavoritesPresenterTests: XCTestCase {
     }
     
     class MockFavoritesInteractor: FavoritesInteractorInterface {
-        func setLikeToPhoto(photoId: Int, completionHandler: @escaping savedClosure) {
+        func setLikeToPhoto(photoId: Int) -> Bool {
             switch photoId {
             case 15286:
                 let liked = mockPhotos[0].liked
                 mockPhotos[0].liked = !liked
-                completionHandler(.success(!liked))
+                return !liked
             case 624015:
                 let liked = mockPhotos[1].liked
                 mockPhotos[1].liked = !liked
-                completionHandler(.success(!liked))
+                return !liked
             case 572897:
                 let liked = mockPhotos[2].liked
                 mockPhotos[2].liked = !liked
-                completionHandler(.success(!liked))
+                return !liked
             case 9999:
                 // Use this ID to throw error. TODO: Define error for these cases
-                completionHandler(.failure(.invalidResponse))
+                XCTFail()
+                return false
             default:
-                completionHandler(.failure(.invalidResponse))
+                XCTFail()
+                return false
             }
         }
         
@@ -266,7 +268,7 @@ class FavoritesPresenterTests: XCTestCase {
     }
 }
 
-var IdentifiableIdKey   = "kIdentifiableIdKey"
+var IdentifiableIdKey   = "kIdentifiablePhotosKey"
 
 extension FavoritesInteractorInterface {
     var mockPhotos: [Photo] {
