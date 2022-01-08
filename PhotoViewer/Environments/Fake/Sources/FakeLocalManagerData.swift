@@ -50,6 +50,7 @@ class MockLocalManagerData: LocalManagerDataInterface {
         defaults.removePersistentDomain(forName: "Fake")
         self.defaults = defaults
         let _ = self.addObject(into: .favoritesPhotos, id: 1)
+        let _ = self.addObject(into: .favoritesPhotos, id: 3408744)
     }
     
     func addObject(into key: DatasType, id: Int) -> Bool {

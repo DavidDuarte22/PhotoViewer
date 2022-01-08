@@ -10,7 +10,7 @@ import Services
 
 class PhotoDetailPresenterTests: XCTestCase {
     
-    var sup: PhotoDetailPresenterImpl?
+    var sut: PhotoDetailPresenterImpl?
     
     var mockPhoto: Photo!
     let mockContainer = MockDependencyContainer()
@@ -18,35 +18,35 @@ class PhotoDetailPresenterTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockPhoto = Photo(id: 15286, width: 2500, height: 1000, originalImage: "https://images.pexels.com/photos/15286/pexels-photo.jpg", smallImage: "https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350", photographer: "Luis del Río", liked: false)
-        sup = PhotoDetailPresenterImpl(dependencies: mockContainer, photo: mockPhoto)
+        sut = PhotoDetailPresenterImpl(dependencies: mockContainer, photo: mockPhoto)
     }
     
     func testGetImageAspect_OK() {
         let mockImage = UIView(frame: .init(x: 0, y: 0, width: 250, height: 100))
-        let aspectRatio = sup?.getImageAspect(view: mockImage)
+        let aspectRatio = sut?.getImageAspect(view: mockImage)
        XCTAssertEqual(aspectRatio, 100)
     }
     
     func testLikePhoto_OK() {
         mockContainer.makePhotoDetailInteractor().mockPhoto = mockPhoto
 
-        sup?.likePhoto()
+        sut?.likePhoto()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
 
-        XCTAssertEqual(sup?.photoItem.value.liked, true)
+        XCTAssertEqual(sut?.photoItem.value.liked, true)
     }
     
     func testUnlikePhoto_OK() {
         mockContainer.makePhotoDetailInteractor().mockPhoto = mockPhoto
 
-        sup?.likePhoto()
+        sut?.likePhoto()
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
-        mockContainer.makePhotoDetailInteractor().mockPhoto.liked = ((sup?.photoItem.value.liked) != nil)
-        sup?.likePhoto()
+        mockContainer.makePhotoDetailInteractor().mockPhoto.liked = ((sut?.photoItem.value.liked) != nil)
+        sut?.likePhoto()
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
 
-        XCTAssertEqual(sup?.photoItem.value.liked, false)
+        XCTAssertEqual(sut?.photoItem.value.liked, false)
     }
     
     

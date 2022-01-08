@@ -9,14 +9,14 @@ import XCTest
 
 class FavoritesPresenterTests: XCTestCase {
     
-    var sup: FavoritesPresenterImpl?
+    var sut: FavoritesPresenterImpl?
     
     var mockPhotos = [Photo]()
     let mockContainer = MockDependencyContainer()
 
     override func setUp() {
         super.setUp()
-        sup = FavoritesPresenterImpl(dependencies: mockContainer)
+        sut = FavoritesPresenterImpl(dependencies: mockContainer)
         mockPhotos = [
             Photo(id: 15286, width: 2500, height: 1667, originalImage: "https://images.pexels.com/photos/15286/pexels-photo.jpg", smallImage: "https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350", photographer: "Luis del Río", liked: false),
             Photo(id: 624015, width: 4216, height: 2848, originalImage: "https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg", smallImage: "https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg?auto=compress&cs=tinysrgb&h=350", photographer: "Frans Van Heerden", liked: false),
@@ -26,16 +26,15 @@ class FavoritesPresenterTests: XCTestCase {
     }
     
     override func tearDown() {
-        sup = nil
+        sut = nil
         mockPhotos.removeAll()
         super.tearDown()
     }
     
     func testGetPhotoByID_OK() {
-        
         mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
-        sup?.getPhotoByID(photoID: 15286) { result, error in
+        sut?.getPhotoByID(photoID: 15286) { result, error in
             guard let photo = result else {
                 return XCTFail()
             }
@@ -46,7 +45,7 @@ class FavoritesPresenterTests: XCTestCase {
     func testGetPhotoByID_NotOK() {
         mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
-        sup?.getPhotoByID(photoID: 1) { result, error in
+        sut?.getPhotoByID(photoID: 1) { result, error in
             XCTAssertNil(result)
             XCTAssertNotNil(error)
         }
@@ -55,78 +54,78 @@ class FavoritesPresenterTests: XCTestCase {
     func testSetInteractorIDsObserver_OK() {
         mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
-        sup?.setInteractorIDsObserver()
-        XCTAssertEqual(sup?.photosIDs.count, 3)
+        sut?.setInteractorIDsObserver()
+        XCTAssertEqual(sut?.photosIDs.count, 3)
     }
     
     func testGetFavoritesPhotos_OK() {
         mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897, 9999]
-        sup?.setInteractorIDsObserver()
+        sut?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 2 seconds")], timeout: 1.0)
         
-        XCTAssertEqual(sup?.favoritesPhotos.value, mockPhotos)
+        XCTAssertEqual(sut?.favoritesPhotos.value, mockPhotos)
     }
     
     func testGetFavoritesPhotos_NotOK_getPhotoByID_FailureClosure() {
         mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         // last id is incorrect and won't fetch that photo
         mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897, 0]
-        sup?.setInteractorIDsObserver()
+        sut?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
         
         mockPhotos.removeLast()
-        XCTAssertEqual(sup?.favoritesPhotos.value, mockPhotos)
+        XCTAssertEqual(sut?.favoritesPhotos.value, mockPhotos)
     }
     
     func testGetFavoritesPhotos_NotOK_getPhotoByID_FailureClosure2() {
         mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         // first id is incorrect and won't fetch that photo
         mockContainer.makeFavoritesInteractor().favoritesID.value = [0, 624015, 572897, 9999]
-        sup?.setInteractorIDsObserver()
+        sut?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for n seconds")], timeout: 1.0)
         
         mockPhotos.remove(at: 0)
-        XCTAssertEqual(sup?.favoritesPhotos.value, mockPhotos)
+        XCTAssertEqual(sut?.favoritesPhotos.value, mockPhotos)
     }
     
     func testTableViewRows_OK() {
         mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
-        sup?.setInteractorIDsObserver()
+        sut?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
         
-        let rowsCount = sup?.tableViewRows()
+        let rowsCount = sut?.tableViewRows()
         XCTAssertEqual(rowsCount, 3)
         
     }
     
     func testTableViewRows_OK_Empty() {
-        sup?.setInteractorIDsObserver()
+        sut?.setInteractorIDsObserver()
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
         
-        let rowsCount = sup?.tableViewRows()
+        let rowsCount = sut?.tableViewRows()
         
         XCTAssertEqual(rowsCount, 0)
     }
     
     func testTableViewRows_favoritesPhotosNotSetted() {
-        let rowsCount = sup?.tableViewRows()
+        let rowsCount = sut?.tableViewRows()
         XCTAssertEqual(rowsCount, 0)
     }
     
     func testGetPhotoUrl_OK() {
         mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
-        sup?.setInteractorIDsObserver()
+        sut?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
         
-        let url = sup?.getPhotoUrl(for: 0)
+        let url = sut?.getPhotoUrl(for: 0)
         
         XCTAssertNotNil(url)
     }
@@ -134,11 +133,11 @@ class FavoritesPresenterTests: XCTestCase {
     func testGetPhotoUrl_NotOK_IndexError() {
         mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
-        sup?.setInteractorIDsObserver()
+        sut?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
         
-        let url = sup?.getPhotoUrl(for: 4)
+        let url = sut?.getPhotoUrl(for: 4)
         
         XCTAssertNil(url)
         
@@ -147,11 +146,11 @@ class FavoritesPresenterTests: XCTestCase {
     func testGetPhotoUrl_NotOK_URLError() {
         mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         mockContainer.makeFavoritesInteractor().favoritesID.value = [9999]
-        sup?.setInteractorIDsObserver()
+        sut?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
         
-        let url = sup?.getPhotoUrl(for: 0)
+        let url = sut?.getPhotoUrl(for: 0)
         
         XCTAssertNil(url)
         
@@ -160,19 +159,19 @@ class FavoritesPresenterTests: XCTestCase {
     func testLikeToPhoto_OK_BothScenarios() {
         mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
-        sup?.setInteractorIDsObserver()
+        sut?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
         
-        sup?.likedPhoto(at: IndexPath.init(row: 0, section: 0))
+        sut?.likedPhoto(at: IndexPath.init(row: 0, section: 0))
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
         
-        XCTAssertEqual(sup?.favoritesPhotos.value?[0].liked, true)
+        XCTAssertEqual(sut?.favoritesPhotos.value?[0].liked, true)
         
-        sup?.likedPhoto(at: IndexPath.init(row: 0, section: 0))
+        sut?.likedPhoto(at: IndexPath.init(row: 0, section: 0))
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
         
-        XCTAssertEqual(sup?.favoritesPhotos.value?[0].liked, false)
+        XCTAssertEqual(sut?.favoritesPhotos.value?[0].liked, false)
         
     }
     
@@ -180,11 +179,11 @@ class FavoritesPresenterTests: XCTestCase {
     func testLikeToPhoto_NotOK_IndexError() {
         mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         mockContainer.makeFavoritesInteractor().favoritesID.value = [15286, 624015, 572897]
-        sup?.setInteractorIDsObserver()
+        sut?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
         
-        XCTAssertNoThrow(sup?.likedPhoto(at: IndexPath.init(row: 3, section: 0)))
+        XCTAssertNoThrow(sut?.likedPhoto(at: IndexPath.init(row: 3, section: 0)))
         
     }
     
@@ -192,7 +191,7 @@ class FavoritesPresenterTests: XCTestCase {
     func testLikeToPhoto_NotOK_FailureClosure() {
         mockContainer.makeFavoritesInteractor().mockPhotos = mockPhotos
         mockContainer.makeFavoritesInteractor().favoritesID.value = [9999]
-        sup?.setInteractorIDsObserver()
+        sut?.setInteractorIDsObserver()
         
         _ = XCTWaiter.wait(for: [expectation(description: "Wait for 1 seconds")], timeout: 1.0)
         

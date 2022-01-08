@@ -107,6 +107,8 @@
 		03C9A63B278727F5003457F3 /* UserDefaultsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C9A63A278727F5003457F3 /* UserDefaultsInteractorTests.swift */; };
 		03C9A63D2788DA4F003457F3 /* LocalDataManagerDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C9A63C2788DA4F003457F3 /* LocalDataManagerDependencies.swift */; };
 		03C9A63E2788DA4F003457F3 /* LocalDataManagerDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C9A63C2788DA4F003457F3 /* LocalDataManagerDependencies.swift */; };
+		03F665FA2789B91D0040C9CC /* FavoritesIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F665F92789B91D0040C9CC /* FavoritesIntegrationTests.swift */; };
+		03F665FC2789F0120040C9CC /* PhotoDetailIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F665FB2789F0120040C9CC /* PhotoDetailIntegrationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,6 +192,8 @@
 		03C9A635278723E9003457F3 /* FakeLocalManagerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLocalManagerData.swift; sourceTree = "<group>"; };
 		03C9A63A278727F5003457F3 /* UserDefaultsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsInteractorTests.swift; sourceTree = "<group>"; };
 		03C9A63C2788DA4F003457F3 /* LocalDataManagerDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManagerDependencies.swift; sourceTree = "<group>"; };
+		03F665F92789B91D0040C9CC /* FavoritesIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesIntegrationTests.swift; sourceTree = "<group>"; };
+		03F665FB2789F0120040C9CC /* PhotoDetailIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailIntegrationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -528,6 +532,7 @@
 				037585212763EECF00904703 /* FavoritesPresenterTests.swift */,
 				03904B3A2771F8C20034758B /* FavoritesInteractorTests.swift */,
 				031CB4582778E84700782ACF /* FavoritesModuleTests.swift */,
+				03F665F92789B91D0040C9CC /* FavoritesIntegrationTests.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -620,6 +625,7 @@
 			children = (
 				0375768F278323630039F922 /* PhotoDetailPresenterTests.swift */,
 				03C9A633278720FA003457F3 /* PhotoDetailInteractorTests.swift */,
+				03F665FB2789F0120040C9CC /* PhotoDetailIntegrationTests.swift */,
 			);
 			path = PhotoDetail;
 			sourceTree = "<group>";
@@ -832,6 +838,7 @@
 				03C9A63E2788DA4F003457F3 /* LocalDataManagerDependencies.swift in Sources */,
 				031CB4592778E84700782ACF /* FavoritesModuleTests.swift in Sources */,
 				03C33C3D2764BE7800E21ADE /* HomeModuleTests.swift in Sources */,
+				03F665FA2789B91D0040C9CC /* FavoritesIntegrationTests.swift in Sources */,
 				03C33C572765442200E21ADE /* HomePresenter.swift in Sources */,
 				03C33C5C2765443E00E21ADE /* PhotoDetailRouter.swift in Sources */,
 				03C33C45276543E800E21ADE /* UITableView+Extension.swift in Sources */,
@@ -846,6 +853,7 @@
 				03C33C512765440E00E21ADE /* FavoritesPresenter.swift in Sources */,
 				03C33C372764B8AA00E21ADE /* HomeInteractor.swift in Sources */,
 				03C33C43276543E200E21ADE /* LocalDataManager.swift in Sources */,
+				03F665FC2789F0120040C9CC /* PhotoDetailIntegrationTests.swift in Sources */,
 				03C33C402765439200E21ADE /* HomeRouter.swift in Sources */,
 				03C33C47276543EC00E21ADE /* UiimageView+Extension.swift in Sources */,
 				03C33C5E2765444300E21ADE /* SceneDelegate.swift in Sources */,

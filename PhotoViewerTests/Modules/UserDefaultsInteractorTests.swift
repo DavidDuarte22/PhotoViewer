@@ -9,16 +9,16 @@ import XCTest
 
 class UserDefaultsInteractorTests: XCTestCase {
 
-    var sup: UserDefaultsInteractorImpl?
+    var sut: UserDefaultsInteractorImpl?
     
     let mockContainer = MockDependencyContainer()
     
     override func setUp() {
-        self.sup = UserDefaultsInteractorImpl(dependencies: mockContainer)
+        self.sut = UserDefaultsInteractorImpl(dependencies: mockContainer)
     }
     
     func testSetLikeToPhoto_OK() {
-        if let result = sup?.setLikeToPhoto(photoId: 123) {
+        if let result = sut?.setLikeToPhoto(photoId: 123) {
             XCTAssertTrue(result)
         } else {
             XCTFail()
@@ -26,8 +26,8 @@ class UserDefaultsInteractorTests: XCTestCase {
     }
     
     func testSetUnlikeToPhoto_OK() {
-        sup?.getFavoritesIDs()
-        if let result = sup?.setLikeToPhoto(photoId: 1) {
+        sut?.getFavoritesIDs()
+        if let result = sut?.setLikeToPhoto(photoId: 1) {
             XCTAssertFalse(result)
         } else {
             XCTFail()
@@ -35,10 +35,10 @@ class UserDefaultsInteractorTests: XCTestCase {
     }
     
     func testGetFavoritesIDs_OK() {
-        guard let sup = sup else { return XCTFail() }
+        guard let sup = sut else { return XCTFail() }
         sup.getFavoritesIDs()
         
-        XCTAssertEqual(sup.favoritesID.value.count, 1)
+        XCTAssertEqual(sup.favoritesID.value.count, 2)
     }
     
     class MockDependencyContainer: LocalDataManagerFactory {

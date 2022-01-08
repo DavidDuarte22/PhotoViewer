@@ -230,113 +230,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "17901CE5-36AE-4FF9-9FD7-CFE441AACAE9"
+            uuid = "99BBFA60-AC53-4EB5-9AD6-D6BB64E0974A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PhotoViewer/Application/Sources/App/Modules/Favorites/Presenter/FavoritesPresenter.swift"
+            filePath = "PhotoViewerTests/Modules/Favorites/IntegrationTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "getFavoritesPhotos()"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "testGetFavoritesPhotos_OK()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "17901CE5-36AE-4FF9-9FD7-CFE441AACAE9 - 4dc46a62fb215e58"
+                  uuid = "99BBFA60-AC53-4EB5-9AD6-D6BB64E0974A - dc0030ef5c1bc2e4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;PhotoViewer.Photo&gt;, Swift.Optional&lt;Services.HTTP.Error&gt;) -&gt; () in PhotoViewer.FavoritesPresenterImpl.getFavoritesPhotos() -&gt; ()"
-                  moduleName = "PhotoViewer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidduarte/Documents/PhotoViewer/PhotoViewer/Application/Sources/App/Modules/Favorites/Presenter/FavoritesPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "350">
-               </Location>
-               <Location
-                  uuid = "17901CE5-36AE-4FF9-9FD7-CFE441AACAE9 - 36860fadd0048f0a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;PhotoViewerTests.Photo&gt;, Swift.Optional&lt;Services.HTTP.Error&gt;) -&gt; () in PhotoViewerTests.FavoritesPresenterImpl.getFavoritesPhotos() -&gt; ()"
+                  symbolName = "PhotoViewerTests.IntegrationTests.testGetFavoritesPhotos_OK() -&gt; ()"
                   moduleName = "PhotoViewerTests"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidduarte/Documents/PhotoViewer/PhotoViewer/Application/Sources/App/Modules/Favorites/Presenter/FavoritesPresenter.swift"
+                  urlString = "file:///Users/davidduarte/Documents/PhotoViewer/PhotoViewerTests/Modules/Favorites/IntegrationTests.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "350">
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "626">
+               </Location>
+               <Location
+                  uuid = "99BBFA60-AC53-4EB5-9AD6-D6BB64E0974A - dc0030ef5c1bc2c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoViewerTests.IntegrationTests.testGetFavoritesPhotos_OK() -&gt; ()"
+                  moduleName = "PhotoViewerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidduarte/Documents/PhotoViewer/PhotoViewerTests/Modules/Favorites/IntegrationTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "626">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5B070ABF-06DE-406F-80E5-F5AA06C38C34"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/PhotoViewer-defjdgvrtizspbbrxzjfopugiczm/SourcePackages/checkouts/PhotoViewer-Services-SWM/Sources/Services/API/ServiceInterface.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "photo(byID:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B32A7325-6BDD-4629-ABC3-2DE3C3F70D57"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/PhotoViewer-defjdgvrtizspbbrxzjfopugiczm/SourcePackages/checkouts/PhotoViewer-Services-SWM/Sources/Services/API/ServiceInterface.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "photos(page:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "96F89C5D-E576-4622-ADBF-E6D09D8E1426"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/PhotoViewer-defjdgvrtizspbbrxzjfopugiczm/SourcePackages/checkouts/PhotoViewer-Services-SWM/Sources/Services/API/ServiceInterface.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "privateRequest(url:completionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3B848CBA-1AC9-4B37-9712-DC0FC023BED4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Library/Developer/Xcode/DerivedData/PhotoViewer-defjdgvrtizspbbrxzjfopugiczm/SourcePackages/checkouts/PhotoViewer-Services-SWM/Sources/Services/API/ServiceInterface.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "privateRequest(url:completionHandler:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

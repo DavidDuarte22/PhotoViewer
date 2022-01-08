@@ -11,7 +11,7 @@ import Services
 
 class HomeInteractorTests: XCTestCase {
   
-  var sup = HomeInteractorImpl(services: App.shared.services)
+  var sut = HomeInteractorImpl(services: App.shared.services)
   
   override func setUp() {
     super.setUp()
@@ -27,7 +27,7 @@ class HomeInteractorTests: XCTestCase {
     let expectation = self.expectation(description: "Fetching")
     var result: Result<[Photo], HTTP.Error>?
     
-    sup.fetchPhotos(page: 1) { response in
+    sut.fetchPhotos(page: 1) { response in
       result = response
       expectation.fulfill()
     }
@@ -50,7 +50,7 @@ class HomeInteractorTests: XCTestCase {
     MyFakeService.resultPhotos = .failure(.invalidResponse)
     
     var result: Result<[Photo], HTTP.Error>?
-    sup.fetchPhotos(page: 1) { response in
+    sut.fetchPhotos(page: 1) { response in
       result = response
       expectation.fulfill()
     }

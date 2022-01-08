@@ -11,14 +11,13 @@ import Services
 
 class FavoritesInteractorTests: XCTestCase {
     
-    var sup: FavoritesInteractorInterface?
-    
+    var sut: FavoritesInteractorInterface?
     
     override func setUp() {
         super.setUp()
         let container = MockDependencyContainer()
         
-        sup = FavoritesInteractorImpl(dependencies: container)
+        sut = FavoritesInteractorImpl(dependencies: container)
     }
     
     override func tearDown() {
@@ -28,14 +27,14 @@ class FavoritesInteractorTests: XCTestCase {
     
     func testGetFavoritesIDs_OK() {
         // getFavoritesIDs called in init
-        XCTAssertEqual(sup?.favoritesID.value.count, 1)
+        XCTAssertEqual(sut?.favoritesID.value.count, 2)
     }
     
     func testFetchPhoto_OK() {
         let expectation = self.expectation(description: "Fetching")
         var result: Result<Photo, HTTP.Error>?
         
-        sup?.fetchPhoto(by: 3408744) { response in
+        sut?.fetchPhoto(by: 3408744) { response in
             result = response
             expectation.fulfill()
         }
@@ -57,7 +56,7 @@ class FavoritesInteractorTests: XCTestCase {
         let expectation = self.expectation(description: "Fetching")
         var result: Result<Photo, HTTP.Error>?
         
-        sup?.fetchPhoto(by: 99) { response in
+        sut?.fetchPhoto(by: 99) { response in
             result = response
             expectation.fulfill()
         }
@@ -75,15 +74,24 @@ class FavoritesInteractorTests: XCTestCase {
     }
     
     func testSetLikeToPhoto_OK() {
-        if let result = sup?.setLikeToPhoto(photoId: 3408744) {
+        if let result = sut?.setLikeToPhoto(photoId: 9999) {
             XCTAssertTrue(result)
         } else {
             XCTFail()
         }
     }
     
+    /// 3408744 ID: Already loaded in MockLocalManagerData.
+    func testSetLikeToPhoto2_OK() {
+        if let result = sut?.setLikeToPhoto(photoId: 3408744) {
+            XCTAssertFalse(result)
+        } else {
+            XCTFail()
+        }
+    }
+    
     func testSetUnlikeToPhoto_OK() {
-        if let result = sup?.setLikeToPhoto(photoId: 1) {
+        if let result = sut?.setLikeToPhoto(photoId: 1) {
             XCTAssertFalse(result)
         } else {
             XCTFail()

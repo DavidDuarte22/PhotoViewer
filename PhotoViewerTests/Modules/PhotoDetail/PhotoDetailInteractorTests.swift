@@ -10,18 +10,25 @@ import Services
 
 class PhotoDetailInteractorTests: XCTestCase {
     
-    var sup: PhotoDetailInteractorInterface?
-    
+    var sut: PhotoDetailInteractorInterface?
     
     override func setUp() {
         super.setUp()
         let container = MockDependencyContainer()
-        
-        sup = PhotoDetailInteractorImpl(dependencies: container)
+        sut = PhotoDetailInteractorImpl(dependencies: container)
     }
     
+    /// 3408744 ID: Already loaded in LocalManagerData.
     func testSetLikeToPhoto_OK() {
-        if let result = sup?.setLikeToPhoto(photoId: 3408744) {
+        if let result = sut?.setLikeToPhoto(photoId: 3408744) {
+            XCTAssertFalse(result)
+        } else {
+            XCTFail()
+        }
+    }
+    
+    func testSetLikeToPhoto2_OK() {
+        if let result = sut?.setLikeToPhoto(photoId: 9999) {
             XCTAssertTrue(result)
         } else {
             XCTFail()
@@ -29,9 +36,9 @@ class PhotoDetailInteractorTests: XCTestCase {
     }
     
     func testSetUnlikeToPhoto_OK() {
-        let _ = sup?.setLikeToPhoto(photoId: 3408744)
-        if let result = sup?.setLikeToPhoto(photoId: 3408744) {
-            XCTAssertFalse(result)
+        let _ = sut?.setLikeToPhoto(photoId: 3408744)
+        if let result = sut?.setLikeToPhoto(photoId: 3408744) {
+            XCTAssertTrue(result)
         } else {
             XCTFail()
         }
