@@ -8,16 +8,14 @@
 
 import UIKit
 
-typealias tabBarTabs = (
-  home: UIViewController,
-  favorites: UIViewController
-)
+/* TODO: End recode at upper layers */
+typealias tabBarTabs = [UIViewController]
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
   
   required init(tabs: tabBarTabs) {
     super.init(nibName: nil, bundle: nil)
-    viewControllers = [ tabs.home, tabs.favorites ]
+    viewControllers = tabs /// prev:  [ tabs.home, tabs.favorites ]
     
   }
   

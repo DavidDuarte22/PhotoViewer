@@ -34,6 +34,9 @@ class FavoritesPresenterImpl: FavoritesPresenterInterface {
     private func getFavoritesPhotos() {
         
         var photosArray = [Photo]()
+      /* TODO:
+       Why a DispatchGroup? If there is an image corrupted that we can't show, we should hide only this one and show the others.
+       */
         let dispatchGroup = DispatchGroup()
         
         for photoID in photosIDs {

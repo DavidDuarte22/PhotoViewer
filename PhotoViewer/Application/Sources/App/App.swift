@@ -21,6 +21,9 @@ final class App {
   }
   
   // Decorate window with TabBarModule
+  /*
+   TODO: this implementation doesn't scale... instead insert submodules as Array
+   */
   func instantiateRootTabBarController(into window: UIWindow) -> UIWindow {
     let submodules = (
       home: HomeModule.build(),

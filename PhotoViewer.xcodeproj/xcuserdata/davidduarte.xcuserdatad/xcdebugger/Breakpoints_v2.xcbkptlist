@@ -208,6 +208,21 @@
                   endingLineNumber = "70"
                   offsetFromSymbolStart = "162">
                </Location>
+               <Location
+                  uuid = "7F85A96A-4AF2-4608-8D3A-AF707E4053DA - a0afa780d8b28c27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PhotoViewerTests.PhotoDetailPresenterTests.MockPhotoDetailRouter.showErrorAlert(title: Swift.String, message: Swift.String, options: Swift.String...) -&gt; ()"
+                  moduleName = "PhotoViewerTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/davidduarte/PhotoViewer/PhotoViewerTests/Modules/PhotoDetail/PhotoDetailPresenterTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "162">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

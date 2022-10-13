@@ -18,6 +18,9 @@ class FavoritesRouterImpl: FavoritesRouterInterface {
     weak var viewController: UIViewController?
     
     func showErrorAlert(title: String, message: String, options: String...) {
+      /*
+       TODO: Isn't ok to show the alert at the Router even if it have the VC instance 
+       */
         DispatchQueue.main.async {
             self.viewController?.presentAlertWithTitleAndMessage(title: title, message: message, options: options) { completion in
             

@@ -20,6 +20,10 @@ class TabBarRouterImpl: TabBarRouterProtocol {
   
   weak var viewControllers: UIViewController?
   
+  /*
+   TODO: With modularice submodules the static func could receive an array and iterate to add them in order to provide transparency for the function in which modules to add
+   i.e. submodules.forEach { ... }
+   */
   static func tabs(usingSubmodules submodules: submodules) -> tabBarTabs {
     let firstTabBarItem = UITabBarItem(title: "", image: .init(systemName: "house"), tag: 1)
     let secondTabBarItem = UITabBarItem(title: "", image: .init(systemName: "bookmark"), tag: 2)
@@ -27,9 +31,9 @@ class TabBarRouterImpl: TabBarRouterProtocol {
     submodules.home.tabBarItem = firstTabBarItem
     submodules.favorites.tabBarItem = secondTabBarItem
     
-    return (
-      home: submodules.home,
-      favorites: submodules.favorites
-    )
+    return [
+      submodules.home,
+      submodules.favorites
+    ]
   }
 }
