@@ -15,15 +15,21 @@ Objetives:
 
 13-10-2022: Review after 1 year. 
 TODO: 
+
+    Features: 
+    - Localizable app
+    
     UX - UI:
     - Implement error handling
     - Improve UX: low connection and offline flow
     - Collection header to select other categories [new feature]
     - Make bigger loading in Photo's detail
+    - Ipad design
     
     Code: (The app has the TODO Mark. Here is just the main ideas to consider)
+    - Replace "Observable" struct with Combine
     - Modularize tabBar submodules 
-    - Implement Auth and token in keychain
+    - Implement Auth and token in keychain -> Store API Key in Firestore?
     - Offline mode: Favorites with Realm
     - Reconsidering folder structure to scale the app to an iPad/MacOS/WatchOS app
     

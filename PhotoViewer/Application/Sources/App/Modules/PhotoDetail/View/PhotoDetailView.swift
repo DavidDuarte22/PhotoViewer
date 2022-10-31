@@ -77,7 +77,7 @@ class PhotoDetailViewImpl: UIViewController {
     button.setImage(icon, for: .normal)
     button.tintColor = .white
 
-    button.addTarget(self, action: #selector(likeImage), for: .touchUpInside)
+    button.addTarget(PhotoDetailViewImpl.self, action: #selector(likeImage), for: .touchUpInside)
     return button
   }()
   
@@ -88,7 +88,7 @@ class PhotoDetailViewImpl: UIViewController {
     let icon = UIImage(systemName: "xmark")
     button.setImage(icon, for: .normal)
     button.tintColor = .white
-    button.addTarget(self, action: #selector(closeImage), for: .touchUpInside)
+    button.addTarget(PhotoDetailViewImpl.self, action: #selector(closeImage), for: .touchUpInside)
     return button
   }()
   
@@ -184,6 +184,7 @@ class PhotoDetailViewImpl: UIViewController {
   }
 }
 
+// TODO:
 extension PhotoDetailViewImpl: ImageViewDelegate {
   func notifyPhotoLoaded() {
     self.loadingIndicator.isHidden = true
